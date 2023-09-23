@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Lato, sans-serif;
+}
+
+.center {
+    padding-left: calc(50% - 562px);
+    padding-right: calc(50% - 562px);
+    ;
+}
+
+.fetured {
+    padding-bottom: 95px;
+}
+
+.footer__dop__info {
+    display: flex;
+    background-color: #222224;
+    gap: 30px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 103px;
+    padding-bottom: 104px;
+    gap: 20px;
+
+}
+
+.info h3 {
+    color: #FBFBFB;
+    font-size: 19.96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text__footer__dop {
+    color: #918f8f;
+    text-align: center;
+    font-family: Lato;
+    font-size: 13.972px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.footer_feedback {
+    display: flex;
+    padding-top: 97px;
+    padding-bottom: 126px;
+    gap: 293px;
+}
+
+.face_company {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.text__face__company {
+    width: 359px;
+    color: #222224;
+    text-align: center;
+    font-family: Lato;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.a_pulvinar {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.inter__email {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+.title_inter__email {
+    color: #222224;
+    text-align: center;
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 167.2%;
+    /* 40.128px */
+}
+
+.title_SUBSCRIBE {
+    color: #222224;
+    text-align: center;
+    font-family: Lato;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 167.2%;
+    /* 40.128px */
+}
+
+.title_FOR_OUR_NEWLETTER {
+    color: #222224;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    padding-bottom: 15px;
+    line-height: 167.2%;
+}
+
+.style__input {
+    margin: -4px;
+    /*цвет рамки*/
+    /* border: 2px solid #cccccc; */
+    /*закругление углов (общее)*/
+    border-radius: 100px 15px 15px 100px;
+    /*закругление углов (Google Chrome)*/
+    /* -webkit-border-radius: 3px;  */
+    /*закругление углов (FireFox)*/
+    /* -moz-border-radius: 3px;  */
+    /*закругление углов (Safari)*/
+    /* -khtml-border-radius: 3px;  */
+    /* желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым*/
+    background: #e3e2e2 !important;
+    /*удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
+    outline: #080808;
+    /*высота на свое усмотрение*/
+    height: 49px;
+    /* ширина на свое усмотрение*/
+    width: 244px;
+    /*//цвет шрифта в обычном состоянии*/
+    color: #111111;
+    /*Размер шрифта*/
+    /* font-size: 30px;  */
+    /*Стиль шрифта*/
+    font-family: Lato;
+    border: 0px solid #080808;
+}
+
+::placeholder {
+    color: #222224;
+    font-family: Lato;
+    font-size: 14px;
+    opacity: 0.671;
+    text-indent: 20px;
+    vertical-align: middle;
+}
+
+.button__submit {
+    border-radius: 15px 100px 100px 15px;
+    background: #F16D7F !important;
+    /*высота на свое усмотрение*/
+    height: 49px;
+    /* ширина на свое усмотрение*/
+    width: 100px;
+    /*//цвет шрифта в обычном состоянии*/
+    color: #fdf9f9;
+    /*Размер шрифта*/
+    font-size: 14px;
+    /*Стиль шрифта*/
+    font-family: Lato;
+    border: 0px solid #080808;
+}
+
+/********/
+.network__logo {
+    display: flex;
+    gap: 7px;
+}
+
+.footer_social_network {
+    display: flex;
+    background-color: #222224;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text__footer_social_network {
+    color: #FBFBFB;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.network__logo {
+    display: flex;
+    gap: 7px;
+    padding: 24px;
+
+}
+
+.network {
+    width: 32px;
+    height: 32px;
+    background-color: #FFF;
+
+}
+
+.network_insta_black {
+    color: #080808;
+}
+
+.network:hover {
+    background-color: #F16D7F;
+    ;
+
+}
+
+.button__submit:hover {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    scale: 1.1;
+}
+.style__input{
+    padding-left: 30px;
+}
