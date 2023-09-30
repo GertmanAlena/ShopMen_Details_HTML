@@ -1,0 +1,72 @@
+.header {
+    background: $backgroundColorSite;
+    @include centerFlex(space-between);
+    @include paddingsTB(18px, 18px);
+    &__left {
+        @include centerFlex(none);
+        gap: 41px;
+    }
+
+    &__right {
+        @include centerFlex(none);
+        gap: 41px;
+        position: relative;
+
+        &__log3 {
+            padding-top: 13px;
+        }
+    }
+
+    .basket__count::after {
+        content: '5';
+        position: absolute;
+        @include centerFlex(center);
+        width: 25px;
+        height: 25px;
+        background-color: $colorHover;
+        color: white;
+        top: -3px;
+        right: -7px;
+        border-radius: 15px 15px 15px 15px;
+    }
+
+    .log:hover {
+        margin-top: 5px;
+        transition: 1s;
+    }
+
+    .header__right__log3:hover {
+        transform: rotate(50deg);
+        transition: 1s;
+    }
+}
+
+.top__head {
+    @include centerFlex(space-between);
+    @include paddingsTB(59px, 60px);
+    background-color: $breadcrumbBGColor;
+    &__heading {
+        @include fontStyle($backgroundColorSite, 24px, 300);
+    }
+
+    .breadCrambs {
+        &__link {
+            @include fontStyle($secondaryColor, 14px, 300);
+            &:last-child{
+                color: $colorHover
+            }
+        }
+    }
+
+    .top__head__link {
+        text-decoration: none;
+    }
+
+    .top__head__heading{
+        color: $colorHover;
+    }
+
+    .breadCrambs__link_site:hover {
+        color: $colorHover;
+    }
+}
