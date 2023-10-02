@@ -6,8 +6,17 @@
     padding: 0;
 }
 
+summary {
+    display: block;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
 body {
-    font-family: Lato, sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -15,12 +24,15 @@ a {
 }
 
 .center {
-    @include centerCalc(562px);
+    @include centerCalc($widthSite);
 }
 
 .header {
+
+
     background: $backgroundColorSite;
     @include centerFlex(space-between);
+    @include paddingsTB(18px, 18px);
 
     &__left {
         @include centerFlex(none);
@@ -64,271 +76,33 @@ a {
 .top__head {
     @include centerFlex(space-between);
     @include paddingsTB(59px, 60px);
+    background: #F8F3F4;
+
+    &__link {
+        @include fontStyle(#636363, 14px, 300);
+        color: $backgroundColorSite;
+    }
 
     &__heading {
-        @include fontStylebreadCrambs($backgroundColorSite, 24px, 300, normal, normal);
+        @include fontStyle($backgroundColorSite, 24px, 300);
     }
 
-    &breadCrambs {
-        &__link {
-            @include fontStylebreadCrambs(#636363, 14px, 300, normal, normal);
-        }
+    .breadCrambs__link {
+        color: $backgroundColorSite;
     }
 
-    .top__head__link {
-        text-decoration: none;
-    }
-
-    .top__head__heading:hover {
-        color: $colorHover;
-    }
-
-    .breadCrambs__link_site:hover {
+    .breadCrambs__link_site {
         color: $colorHover;
     }
 }
 
-/****** carousel ******/
-.carousel {
-    position: relative;
+.top__head__link {
+    text-decoration: none;
 
-    &-inner {
-        @include centerFlex(space-around);
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-
-        &-item {
-            position: relative;
-            display: none;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            width: 100%;
-            // transition: -webkit-transform .6s ease;
-            // transition: transform .6s ease;
-            // transition: transform .6s ease,-webkit-transform .6s ease;
-            // -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            -webkit-perspective: 1000px;
-            perspective: 1000px;
-
-            &-next {
-                @extend %carouselActiv;
-            }
-
-            &-prev {
-                @extend %carouselActiv;
-            }
-
-            &.active {
-                @extend %carouselActiv;
-            }
-        }
-
-        .w-100 {
-            width: 50% !important;
-        }
-
-        .d-block {
-            display: block !important;
-        }
-
-        img {
-            vertical-align: middle;
-            border-style: none;
-        }
-    }
-
-    &-control-next {
-        right: 0;
-        padding-right: 8px;
-    }
-
-    &-control-prev {
-        left: 0;
-        padding-left: 8px;
-    }
 }
 
-.carousel-control-next,
-.carousel-control-prev {
-    @include centerFlex(center);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    width: 15%;
-    color: $backgroundColorSite;
-    text-align: center;
-    // opacity: .5;
-}
-
-.product_description {
-    @include centerFlex(center);
-    flex-direction: column;
-    @include paddingsTB(0px, 129px);
-
-    &_title1 {
-        color: #000;
-        @include stileText(14px, 300);
-        @include paddingsTB(64px, 12px);
-    }
-
-    &_title2 {
-        color: #4D4D4D;
-        @include stileText(18px, 300);
-        @include paddingsTB(12px, 48px);
-    }
-
-    &_text {
-        color: #5E5E5E;
-        @include stileText(14px, 300);
-        text-align: center;
-        width: 582px;
-    }
-
-    &__price {
-        @include stileText(24px, 300);
-        @include paddingsTB(32px, 65px);
-        color: $colorHover
-    }
-
-    &_line {
-        @include paddingsTB(0px, 65px);
-    }
-
-    &_breadCrambs {
-
-        @include centerFlex(center);
-        flex-direction: row;
-        gap: 22px;
-        padding-bottom: 63px;
-
-        &__a {
-            color: $backgroundColorSite;
-            gap: 9px;
-        }
-    }
-
-    &__button {
-        @include centerFlex(center);
-        gap: 22px;
-        border: 2px solid #e34761;
-        padding: 3px 54px;
-    }
-
-    .button_text {
-        @include stileText(16px, 400);
-        padding-top: 10px;
-    }
-}
-
-.product_description_title1:hover {
+.top__head__heading:hover {
     color: $colorHover;
-}
-
-.product_description__button:hover {
-    color: $colorHover;
-    transform: translate(0, 0.25em);
-}
-
-
-
-/*main*/
-.main {
-    background: #F1E4E6;
-
-    &__content {
-        @include centerFlex(center);
-        padding: 5px;
-
-        &__image {
-            margin-left: -139px;
-        }
-    }
-
-    &__text {
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
-        display: flex;
-        flex-direction: row;
-        gap: 16px;
-
-        &_OF_LUXERIOUS {
-            font-size: 32px;
-            font-weight: 700;
-        }
-
-        &_FASHION {
-            color: #F16D7F;
-            font-size: 32px;
-            font-weight: 700;
-        }
-    }
-}
-
-/*main__catalog*/
-.main__catalog {
-    @include gridProduct(center, 30px);
-    @include fontStyle(#FFF, center, 16px, 400, normal, normal);
-    padding-top: 65px;
-    padding-bottom: 96px;
-
-    &_link {
-        text-decoration: none;
-    }
-
-    &_link__long {
-        text-decoration: none;
-    }
-
-    .main__link1 {
-        @extend %mainCatalogStyle;
-        background-image: url(img/Group1.png);
-    }
-
-    .main__link2 {
-        @extend %mainCatalogStyle;
-        background-image: url(img/Group2.jpg);
-    }
-
-    .main__link3 {
-        @extend %mainCatalogStyle;
-        background-image: url(img/Group3.jpg);
-    }
-
-    .main__link4 {
-        @extend %mainCatalogStyle;
-        height: 180px;
-        width: 1140px;
-        background-image: url(img/Group4.jpg);
-        grid-column: 1/4;
-    }
-
-    .span__catalog {
-        @include fetured__title__text(#F16D7F, 24px, 700);
-    }
-
-    .link:hover {
-        color: aqua;
-        transform: scale(1.2);
-        /* Увеличиваем масштаб */
-        transition: 1s;
-        /* Время эффекта */
-    }
-
-    .link__long:hover {
-        @extend %linkHover;
-    }
-
 }
 
 /*затемнение с ярлыком начало*/
@@ -373,40 +147,151 @@ a {
     color: cornflowerblue;
 }
 
-/****fetured*******/
-.fetured__product__new{
-    @include centerFlex(center);
-    gap: 30px;
+/****filter__sort*******/
+
+.filter_sort {
+    // width: 132px;
+    position: absolute;
+    display: flex;
+    gap: 16px;
+    @include paddingsTB(39px, 64px);
 }
 
-.fetured {
-    display: grid;
-    gap: 30px;
-    justify-items: center;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 95px;
+.filter {
+    padding: 13px 16px 16px;
+    width: 360px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+
+    &[open] {
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+
+    &_summary {
+        @include centerFlex(flex-start);
+        gap: 11px;
+    }
 
     &__title {
-        grid-column: 1/4;
+        @include fetured__title__text($backgroundColorSite, 14px, 400);
+        line-height: 17px;
+    }
+
+    &_content {
+        @include paddingsTB(24px, 16px);
+    }
+
+    &_link-box {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        gap: 11px;
+        padding: 24px 16px;
+    }
 
-        &__tit {
-            @include fetured__title__text(#222, 30px, 400);
-        }
+    &_link {
+        @include fetured__title__text($colorSortText, 14px, 400);
+        line-height: 17px;
+        padding-left: 17px;
 
-        &__text {
-            @include fetured__title__text(#9F9F9F, 14px, 400);
+        &:hover {
+            color: $colorHover;
         }
     }
 
-    &__product {
-        width: 360px;
+    &_head {
+        width: 140%;
+        @include fetured__title__text($colorSortText, 14px, 400);
+        @include paddingsTB(11px, 11px);
+        padding-left: 11px;
+        border-bottom: 1px solid #e7e3e3;
+        border-left: 5px solid $colorHover
+    }
+
+    &_item {
+        margin-top: 16px;
+
+        &[open] .filter_head-title {
+            color: $colorHover;
+        }
+
+    }
+
+    &[open] .filter__title {
+        color: $colorHover;
+    }
+
+    &[open] path {
+        fill: $colorHover;
+    }
+
+    &_item[open].filter_head {
+        color: $colorHover;
+    }
+
+}
+
+.sort {
+    @include centerFlex(flex-start);
+    margin-left: 15px;
+    padding-top: 12px;
+    align-items: flex-start;
+
+    &_details {
+        position: relative;
+        padding-right: 27px;
+    }
+
+    &_summary {
         display: flex;
         align-items: center;
+        gap: 10px;
+    }
+
+    &_title {
+        @include fetured__title__text(#6F6E6E, 14px, 400);
+        line-height: 17px;
+    }
+
+    &__box {
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        border: 1px solid #222222;
+        position: absolute;
+        width: 79px;
+        z-index: 10;
+        margin-top: 5px;
+    }
+
+    &__check {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding-left: 9px;
+        @include paddingsTB(5px, 9px);
+
+        label {
+            @include fetured__title__text(#6F6E6E, 14px, 400);
+            font-family: Roboto;
+        }
+    }
+
+
+}
+
+/****fetured*******/
+
+.fetured {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 139px;
+
+    &__product {
+        width: 360px;
+        @include centerFlex(center);
         flex-direction: column;
 
         &__img {
@@ -466,9 +351,22 @@ a {
 
 /****footer*******/
 .footer {
+    position: relative;
+
+    // background-image: url(img/backgroundBig.png);
+    // width: 100%;
+    &_background_image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 84%;
+        opacity: 0.4;
+    }
+
     &__dop__info {
         @include centerFlex(center);
-        background-color: $backgroundColorSite;
+
         gap: 30px;
     }
 
@@ -505,6 +403,9 @@ a {
         padding-top: 97px;
         padding-bottom: 126px;
         gap: 293px;
+        // padding: 100px;
+        position: relative;
+        z-index: 2;
 
         &_face_company {
             display: flex;
@@ -652,24 +553,30 @@ a {
     }
 }
 
-/***адаптив для телефона***/
+
+/*****адаптив для телефона*****/
+
 @media (min-width:320px) and (max-width: 767px) {
     body {
-        max-width: 767px;
+        max-width: $widthTabletSite;
     }
 
     /*header*/
     .center {
-        @include centerCalcMobile(180px);
+        @include centerCalc($widthTabletSite);
     }
 
-    .header__left {
-        padding-left: 16px;
-        gap: 41px;
-    }
+    .header {
+        @include centerFlex(space-around);
 
-    .header__right {
-        gap: 0px;
+        &__left {
+            padding-left: 16px;
+            gap: 41px;
+        }
+
+        &__right {
+            gap: 0px;
+        }
     }
 
     .basket,
@@ -681,6 +588,54 @@ a {
 
     .log1__header__right {
         padding-right: 16px;
+    }
+
+    .top__head {
+        flex-direction: column;
+
+        &__link {
+            padding-bottom: 32px;
+        }
+    }
+
+    .carousel {
+        @include paddingsTB(none, 85px);
+
+        &-inner {
+            padding-bottom: 85px;
+        }
+    }
+
+    .product_description {
+        position: relative !important;
+        margin-bottom: 65px;
+        @include paddingsLR(5px, 5px);
+
+        &__box {
+            position: absolute;
+            width: 320px;
+            // position: relative !important;
+            position: static;
+            width: 100%;
+            border: none;
+        }
+
+        &_text {
+            width: 294px;
+        }
+
+        &_breadCrambs {
+            color: #6F6E6E;
+            font-family: Lato;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        &__button {
+            width: 200px;
+        }
     }
 
     /*main*/
@@ -754,10 +709,8 @@ a {
         }
 
         &__product {
-            width: 97%;
-
             &__img {
-                width: 97%;
+                @include paddingsLR(10px, 10px);
             }
 
         }
@@ -767,18 +720,17 @@ a {
         }
     }
 
-    .footer {
-        &__dop__info {
-            display: flex;
-            flex-direction: column;
-            padding-left: 20px;
-            padding-right: 20px;
-            gap: 0px;
+    .fetured__product__new {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 64px;
+    }
 
-            .info {
-                padding-top: 38px;
-                padding-bottom: 64px;
-            }
+    .footer {
+        &_background_image {
+            height: 82%;
         }
 
         &_feedback {
@@ -788,13 +740,14 @@ a {
             padding-bottom: 109px;
             gap: 59px;
 
-            &_face_company {
+            .footer_feedback_face_company {
                 padding-bottom: 48px;
             }
 
-            &text__face__company {
-                font-size: 18px;
-                width: 328px;
+            .text__face__company {
+                width: 100%;
+                @include fontStyle($backgroundColorSite, 18px, 400,
+                    $font-style: normal, $line-height: normal, $text-align: none);
             }
 
             &_inter__email {
@@ -834,23 +787,54 @@ a {
         flex-direction: column-reverse;
         padding-bottom: 10px;
     }
-
 }
+
 
 /***адаптив для планшета***/
 @media (min-width:768px) and (max-width: 1024px) {
     body {
-        max-width: 1024px;
+        // max-width: $widthTabletSite;
+        @include paddingsTB(18px, 18px);
     }
 
     .center {
-        @include centerCalcMobile(376px);
+        @include centerCalc($widthTabletSite);
     }
 
     .header {
         &__right {
             margin-right: 20px;
         }
+
+        @include paddingsLR(32px, 41px);
+    }
+
+    .top__head {
+        @include paddingsLR(16px, 16px);
+
+        &__link {
+            @include paddingsTB(59px, 60px);
+        }
+    }
+
+    .product_description {
+        margin-bottom: 129px;
+        @include paddingsLR(5px, 5px);
+
+        &__box {
+            position: static;
+            border: none;
+            width: 100%;
+
+        }
+
+        &__button {
+            width: 212px;
+        }
+    }
+
+    .product_description_breadCrambs__a {
+        @include fetured__title__text(#6F6E6E, 14px, 400);
     }
 
     .main {
@@ -888,7 +872,19 @@ a {
         }
     }
 
+    .fetured__product__new {
+        gap: 16px;
+
+        .woman {
+            display: none;
+        }
+    }
+
     .footer {
+        &_background_image {
+            height: 89%;
+        }
+
         &_feedback {
             flex-direction: column;
             align-items: center;

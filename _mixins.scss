@@ -1,15 +1,8 @@
 @mixin centerCalc($width) {
-    padding-left: calc(50% - $width);
-    padding-right: calc(50% - $width);
-}
-@mixin centerCalcMobile($width) {
-    padding-left: calc(50% - $width);
-    padding-right: calc(50% - $width);
-}
-@mixin centerCalcTablet($width) {
-    padding-left: calc(50% - $width);
-    padding-right: calc(50% - $width);
-}
+    padding-left: calc(50% - $width/2);
+    padding-right: calc(50% - $width/2);
+    
+    }
 
 @mixin centerFlex($justify-content) {
     display: flex;
@@ -17,27 +10,20 @@
     align-items: center;
 }
 
-@mixin gridProduct($justify-content, $gap) {
+@mixin gridProduct($gap) {
     display: grid;
-    justify-content: $justify-content;
+    justify-content: center;
     align-items: center;
     gap: $gap;
 }
-
-@mixin fontStyle($color, $text-align, $font-size, $font-weight, $font-style, $line-height) {
-    color: $color;
-    text-align: $text-align;
-    font-size: $font-size;
-    font-weight: $font-weight;
-    font-style: $font-style;
-    line-height: $line-height;
-}
-@mixin fontStylebreadCrambs($color, $font-size, $font-weight, $font-style, $line-height) {
-    color: $color;
-    font-size: $font-size;
-    font-weight: $font-weight;
-    font-style: $font-style;
-    line-height: $line-height;
+@mixin fontStyle($color, $font-size, $font-weight,
+$font-style:normal, $line-height:normal, $text-align:none) {
+color: $color;
+font-size: $font-size;
+font-weight: $font-weight;
+font-style: $font-style;
+text-align: $text-align;
+line-height: $line-height;
 }
 
 @mixin fetured__title__text($color, $font-size, $font-weight) {
@@ -62,12 +48,6 @@
     padding-top: $paddingTop;
     padding-bottom: $paddingBottom;
 }
-@mixin stileText($font-size, $font-weight) {
-    font-size: $font-size;
-    font-style: normal;
-    font-weight: $font-weight;
-    line-height: normal;
-}
 
 %mainCatalogStyle {
     display: flex;
@@ -80,13 +60,4 @@
     line-height: 1.2;
     color: white;
 }
-%linkHover {
-    color: aqua;
-    transform: scale(1.2);
-    /* Увеличиваем масштаб */
-    transition: 1s;
-    /* Время эффекта */
-}
-%carouselActiv{
-    display: block;
-}
+
