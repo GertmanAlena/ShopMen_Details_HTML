@@ -12,11 +12,6 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-body {
-  font-family: "Lato", sans-serif;
-  font-family: "Roboto", sans-serif;
-}
-
 a {
   text-decoration: none;
 }
@@ -278,14 +273,14 @@ a {
   width: 79px;
   z-index: 10;
   margin-top: 5px;
+  padding: 9px;
 }
 .sort__check {
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding-left: 9px;
   padding-top: 5px;
   padding-bottom: 9px;
+  gap: 9px;
 }
 .sort__check label {
   color: #6F6E6E;
@@ -324,14 +319,15 @@ a {
   padding-bottom: 25px;
 }
 .text_product .text__product__title {
-  color: #000;
-  font-size: 20px;
-  font-weight: 500;
+  font-family: "latoblack";
+  color: #222224;
+  font-size: 13px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 .text_product .text__product__text {
+  font-family: "latolight";
   color: #5D5D5D;
   font-size: 14px;
   font-style: normal;
@@ -339,6 +335,7 @@ a {
   line-height: normal;
 }
 .text_product .text__product__price {
+  font-family: "latoblack";
   color: #F16D7F;
   font-size: 16px;
   font-style: normal;
@@ -359,16 +356,56 @@ a {
   line-height: normal;
 }
 
+/****pege__number*******/
+.pagina {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  margin-bottom: 96px;
+}
+.pagina_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+  border: 2px solid #f6f3f3;
+  width: 350px;
+  height: 60px;
+}
+.pagina_page__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 17px;
+}
+.pagina .number_page {
+  list-style-type: none;
+}
+.pagina .num {
+  color: #C4C4C4;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.pagina .num:hover {
+  color: #F16D7F;
+}
+
 /****footer*******/
 .footer {
   position: relative;
+}
+.footer__dop__info {
+  background-color: #222224;
 }
 .footer_background_image {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  height: 84%;
+  height: 100%;
   opacity: 0.4;
 }
 .footer__dop__info {
@@ -539,19 +576,25 @@ a {
   font-style: 400;
   text-align: normal;
   line-height: normal;
+  padding-top: 30px;
 }
-.footer_social_network .network__logo {
+.footer_social_network__icons {
   display: flex;
-  gap: 17px;
-  padding: 24px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 7px;
+  padding-top: 24px;
 }
-.footer_social_network .network {
-  width: 32px;
-  height: 32px;
-  background-color: #FFF;
+.footer_social_network .icon {
+  padding-top: 9px;
 }
-.footer_social_network .network_insta_black {
-  color: #080808;
+.footer_social_network .logo_footer {
+  background-color: aliceblue;
+  padding: 8px;
+}
+.footer .logo_footer:hover {
+  background-color: #F16D7F;
 }
 .footer .network:hover {
   background-color: #F16D7F;
@@ -559,6 +602,9 @@ a {
 .footer .button__submit:hover {
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   scale: 1.1;
+}
+.footer .icon:hover {
+  color: #F16D7F;
 }
 
 /*****адаптив для телефона*****/
