@@ -9,6 +9,14 @@
     justify-content: $justify-content;
     align-items: center;
 }
+@mixin flexDispley($justify-content, $flex-direction, $flex-wrap, $align-items, $gap) {
+    display: flex;
+    justify-content: $justify-content;
+    flex-direction: $flex-direction;
+    flex-wrap: $flex-wrap;
+    align-items: $align-items;
+    gap: $gap;
+}
 
 @mixin gridProduct($gap) {
     display: grid;
@@ -49,13 +57,14 @@ line-height: $line-height;
     padding-bottom: $paddingBottom;
 }
 
+
+
 %mainCatalogStyle {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 260px;
-    width: 360px;
+
     font-size: 16px;
     line-height: 1.2;
     color: white;

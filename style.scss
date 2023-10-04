@@ -1,13 +1,15 @@
 @import 'vars';
 @import 'mixins';
+@import 'footer';
+@import 'main';
+@import 'fetured';
+@import 'filter';
+@import 'carousel';
+@import 'cartContent';
 
 * {
     margin: 0;
     padding: 0;
-}
-
-body {
-    // font-family: 'latoblack';
 }
 
 summary {
@@ -18,7 +20,6 @@ summary::-webkit-details-marker {
     display: none;
 }
 
-
 a {
     text-decoration: none;
 }
@@ -28,11 +29,18 @@ a {
 }
 
 .header {
-
-
     background: $backgroundColorSite;
     @include centerFlex(space-between);
     @include paddingsTB(18px, 18px);
+    position: relative;
+
+    &__burger-img:hover {
+        -webkit-box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
+        -moz-box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
+        box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
+        transition: All 0.5s ease;
+
+    }
 
     &__left {
         @include centerFlex(none);
@@ -47,7 +55,70 @@ a {
         &__log3 {
             padding-top: 13px;
         }
+
+        .burger_head {
+            padding-bottom: 20px;
+
+            &-title {
+                @include fontStyle(#000, 14px, 700,
+                    $font-style: normal, $line-height: normal, $text-align: none);
+                font-family: 'latoblack';
+            }
+        }
+
+        .burger_item[open] .burger_head-title {
+            color: $colorHover;
+            transition: All 0.5s ease;
+        }
+        .burger_link-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 11px;
+            padding-bottom: 21px;
+            padding-left: 24px;
+
+            .burger_link:hover {
+                color: $colorHover;
+            }
+            .burger_link {
+                color: #6F6E6E;
+                font-family: Lato;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+        .nav {
+            background: #FFFFFF;
+            box-shadow: 6px, 4px, 35px rgba(0, 0, 0, 0.21);
+            width: 232px;
+            padding: 32px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 80px;
+            right: 0px;
+            transition: right .3s;
+
+            -webkit-box-shadow: -6px 7px 8px 0px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: -6px 7px 8px 0px rgba(34, 60, 80, 0.2);
+            box-shadow: -6px 7px 8px 0px rgba(34, 60, 80, 0.2);
+
+        }
     }
+
+    #burger {
+        position: absolute;
+        left: -99999999px;
+        visibility: hidden;
+
+        &:checked~.nav {
+            right: -99999px;
+            // right: -$widthBurgerMenu*2;
+        }
+    }
+
 
     .basket__count::after {
         content: '5';
@@ -77,34 +148,39 @@ a {
     @include centerFlex(space-between);
     @include paddingsTB(59px, 60px);
     background: #F8F3F4;
-
+    text-decoration: none;
 
     &__link {
+        font-family: 'latobold';
+        text-decoration: none;
         @include fontStyle(#636363, 14px, 300);
         color: $backgroundColorSite;
+
     }
 
     &__heading {
         @include fontStyle($backgroundColorSite, 24px, 300);
+
+        &:hover {
+            color: $colorHover;
+        }
     }
 
     .breadCrambs__link {
         color: $backgroundColorSite;
+
+        text-decoration: none;
+
+        &:hover {
+            color: $colorHover;
+        }
     }
 
-    .breadCrambs__link_site {
-        color: $colorHover;
-    }
 }
 
-.top__head__link {
-    text-decoration: none;
-
-}
-
-.top__head__heading:hover {
-    color: $colorHover;
-}
+// .top__head__heading:hover {
+//     color: $colorHover;
+// }
 
 /*затемнение с ярлыком начало*/
 .prod {
@@ -141,6 +217,8 @@ a {
     border: 3px dotted #3a7999;
     color: #3a7999;
     background: rgba(0, 0, 0, 0);
+    transition: All 0.5s ease;
+
 }
 
 .info_slyle_footer:hover {
@@ -148,157 +226,7 @@ a {
     color: cornflowerblue;
 }
 
-/****filter__sort*******/
 
-.filter_sort {
-    // width: 132px;
-    position: absolute;
-    display: flex;
-    gap: 16px;
-    @include paddingsTB(39px, 64px);
-}
-
-.filter {
-    padding: 13px 16px 16px;
-    width: 360px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 10;
-
-    &[open] {
-        background: #FFFFFF;
-        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-    }
-
-    &_summary {
-        @include centerFlex(flex-start);
-        gap: 11px;
-    }
-
-    &__title {
-        @include fetured__title__text($backgroundColorSite, 14px, 400);
-        line-height: 17px;
-    }
-
-    &_content {
-        @include paddingsTB(24px, 16px);
-    }
-
-    &_link-box {
-        display: flex;
-        flex-direction: column;
-        gap: 11px;
-        padding: 24px 16px;
-    }
-
-    &_link {
-        @include fetured__title__text($colorSortText, 14px, 400);
-        line-height: 17px;
-        padding-left: 17px;
-
-        &:hover {
-            color: $colorHover;
-        }
-    }
-
-    &_head {
-        width: 140%;
-        @include fetured__title__text($colorSortText, 14px, 400);
-        @include paddingsTB(11px, 11px);
-        padding-left: 11px;
-        border-bottom: 1px solid #e7e3e3;
-        border-left: 5px solid $colorHover
-    }
-
-    &_item {
-        margin-top: 16px;
-
-        &[open] .filter_head-title {
-            color: $colorHover;
-        }
-
-    }
-
-    &[open] .filter__title {
-        color: $colorHover;
-    }
-
-    &[open] path {
-        fill: $colorHover;
-    }
-
-    &_item[open].filter_head {
-        color: $colorHover;
-    }
-
-}
-
-.sort {
-    @include centerFlex(flex-start);
-    margin-left: 15px;
-    padding-top: 12px;
-    align-items: flex-start;
-
-    &_details {
-        position: relative;
-        padding-right: 27px;
-    }
-
-    &_summary {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    &_title {
-        @include fetured__title__text(#6F6E6E, 14px, 400);
-        line-height: 17px;
-    }
-
-    &__box {
-        background: #FFFFFF;
-        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
-        border: 1px solid #222222;
-        position: absolute;
-        width: 79px;
-        z-index: 10;
-        margin-top: 5px;
-        padding: 9px;
-    }
-
-    &__check {
-        display: flex;
-        align-items: center;
-        @include paddingsTB(5px, 9px);
-        gap: 9px;
-        label {
-            @include fetured__title__text(#6F6E6E, 14px, 400);
-            font-family: Roboto;
-        }
-    }
-
-
-}
-
-/****fetured*******/
-
-.fetured {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 139px;
-
-    &__product {
-        width: 360px;
-        @include centerFlex(center);
-        flex-direction: column;
-
-        &__img {
-            width: 100%;
-        }
-    }
-}
 
 .text_product {
     display: flex;
@@ -339,253 +267,9 @@ a {
     }
 }
 
-/****pege__number*******/
-
-.pagina {
-    @include centerFlex(center);
-    margin-top: 48px;
-    margin-bottom: 96px;
-
-    &_page {
-        @include centerFlex(center);
-        gap: 17px;
-        border: 2px solid #f6f3f3;
-        width: 350px;
-        height: 60px;
-    }
-
-    &_page__box {
-        @include centerFlex(center);
-        gap: 17px;
-    }
-
-    .number_page {
-        list-style-type: none;
-    }
-
-    .num {
-        @include fetured__title__text(#C4C4C4, 16px, 300);
-
-        &:hover {
-            color: $colorHover;
-        }
-    }
-
-}
-
-/****footer*******/
-.footer {
-    position: relative;
 
 
-    &__dop__info {
-        background-color: $backgroundColorSite;
-    }
 
-    &_background_image {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.4;
-    }
-
-    &__dop__info {
-        @include centerFlex(center);
-
-        gap: 30px;
-    }
-
-    .info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 103px;
-        padding-bottom: 104px;
-        gap: 20px;
-
-        &_title {
-            color: #FBFBFB;
-            font-size: 19.96px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-
-        &__text {
-            color: #918f8f;
-            text-align: center;
-            font-family: Lato;
-            font-size: 13.972px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-        }
-    }
-
-    &_feedback {
-        display: flex;
-        padding-top: 97px;
-        padding-bottom: 126px;
-        gap: 293px;
-        // padding: 100px;
-        position: relative;
-        z-index: 2;
-
-        &_face_company {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 30px;
-
-            .text__face__company {
-                width: 359px;
-                color: #222224;
-                text-align: center;
-                font-family: Lato;
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-
-                .a_pulvinar {
-                    font-size: 20px;
-                    font-style: italic;
-                }
-            }
-        }
-
-        &_inter__email {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: flex-start;
-            flex-wrap: nowrap;
-            justify-content: flex-end;
-        }
-
-        .title_SUBSCRIBE {
-            color: #222224;
-            text-align: center;
-            font-family: Lato;
-            font-size: 24px;
-            font-style: normal;
-            font-weight: 700;
-        }
-
-        .title_FOR_OUR_NEWLETTER {
-            color: #222224;
-            font-family: Lato;
-            font-size: 18px;
-            font-style: normal;
-            font-weight: 400;
-            padding-bottom: 15px;
-            line-height: 167.2%;
-        }
-
-        .style__input {
-            margin: -4px;
-            /*цвет рамки*/
-            /* border: 2px solid #cccccc; */
-            /*закругление углов (общее)*/
-            border-radius: 100px 15px 15px 100px;
-            /*закругление углов (Google Chrome)*/
-            /* -webkit-border-radius: 3px;  */
-            /*закругление углов (FireFox)*/
-            /* -moz-border-radius: 3px;  */
-            /*закругление углов (Safari)*/
-            /* -khtml-border-radius: 3px;  */
-            /* желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым*/
-            background: #e3e2e2 !important;
-            /*удаляет обводку в браузерах хром(желтая) и сафари(синяя)*/
-            outline: #080808;
-            /*высота на свое усмотрение*/
-            height: 49px;
-            /* ширина на свое усмотрение*/
-            width: 244px;
-            /*//цвет шрифта в обычном состоянии*/
-            color: #111111;
-            /*Размер шрифта*/
-            /* font-size: 30px;  */
-            /*Стиль шрифта*/
-            font-family: Lato;
-            border: 0px solid #080808;
-        }
-
-        .style__input {
-            padding-left: 30px;
-        }
-
-        ::placeholder {
-            color: #222224;
-            font-family: Lato;
-            font-size: 14px;
-            opacity: 0.671;
-            text-indent: 20px;
-            vertical-align: middle;
-        }
-
-        .button__submit {
-            border-radius: 15px 100px 100px 15px;
-            background: #F16D7F !important;
-            /*высота на свое усмотрение*/
-            height: 49px;
-            /* ширина на свое усмотрение*/
-            width: 100px;
-            /*//цвет шрифта в обычном состоянии*/
-            color: #fdf9f9;
-            /*Размер шрифта*/
-            font-size: 14px;
-            /*Стиль шрифта*/
-            font-family: Lato;
-            border: 0px solid #080808;
-        }
-    }
-
-    &_social_network {
-        @include centerFlex(space-between);
-        background-color: $backgroundColorSite;
-
-        &__text {
-            @include fontStyle(#FBFBFB, center, 16px, 400, normal, normal);
-            padding-top: 30px;
-        }
-
-        &__icons {
-            display: flex;
-            align-items: center;
-            flex-direction: row;
-            justify-content: center;
-            gap: 7px;
-            padding-top: 24px;
-        }
-        .icon{
-            padding-top: 9px;
-        }
-        .logo_footer{
-            background-color: aliceblue;
-            padding: 8px;
-            
-        }
-    }
-    .logo_footer:hover{
-        background-color: $colorHover
-    }
-    .network:hover {
-        background-color: $colorHover;
-    }
-
-    .button__submit:hover {
-        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        scale: 1.1;
-    }
-    .icon:hover{
-        color: $colorHover;
-    }
-}
 
 
 /*****адаптив для телефона*****/
