@@ -1,0 +1,205 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.fetured__product__new {
+    @include centerFlex(center);
+    gap: 30px;
+    padding-top: 129px
+}
+
+.fetured {
+    @include gridProduct(30px);
+    grid-template-columns: repeat(3, 1fr);
+    @include paddingsTB(1px, 48px);
+    justify-items: center;
+    // padding-bottom: 95px;
+    & catalog {
+        padding-top: 132px;
+    }
+    &__title {
+        grid-column: 1/4;
+        @include centerFlex(center);
+        flex-direction: column;
+
+        &__tit {
+            @include fetured__title__text(#222, 30px, 400);
+        }
+
+        &__text {
+            @include fetured__title__text(#9F9F9F, 14px, 400);
+        }
+    }
+
+    &__product {
+        width: 360px;
+        @include centerFlex(center);
+        flex-direction: column;
+        background-color: #F8F8F8;
+        &__img {
+            width: 100%;
+        }
+    }
+}
+
+.text_product {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    &__title {
+        color: #000;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    &__text {
+        color: #5D5D5D;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    &__price {
+        color: #F16D7F;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+// .button__footer__product {
+//     grid-column: 1/4;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: column;
+//     padding: 15px 50px;
+//     & span {
+//         color: #F26376;
+//         font-family: Lato;
+//         font-size: 16px;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: normal;
+//     }
+// }
+
+/****pege__number*******/
+
+.pagina {
+    @include centerFlex(center);
+    margin-bottom: 96px;
+
+    &_page {
+        @include centerFlex(center);
+        gap: 17px;
+        border: 2px solid #f6f3f3;
+        width: 350px;
+        height: 60px;
+    }
+
+    &_page__box {
+        @include centerFlex(center);
+        gap: 17px;
+    }
+
+    .number_page {
+        list-style-type: none;
+    }
+
+    .num {
+        @include fetured__title__text(#C4C4C4, 16px, 300);
+
+        &:hover {
+            color: $colorHover;
+        }
+    }
+
+}
+/****fetured__catalog*******/
+.fetured__catalog {
+    @include gridProduct(30px);
+    grid-template-columns: repeat(3, 1fr);
+    @include paddingsTB(132px, 48px);
+    justify-items: center;
+
+    &__title {
+        grid-column: 1/4;
+        @include centerFlex(center);
+        flex-direction: column;
+        &__tit {
+            @include fetured__title__text(#222, 30px, 400);
+        }
+        &__text {
+            @include fetured__title__text(#9F9F9F, 14px, 400);
+        }
+    }
+    &__product {
+        width: 360px;
+        @include centerFlex(center);
+        flex-direction: column;
+        background-color: #F8F8F8;
+        &__img {
+            width: 100%;
+        }
+    }
+}
+.text_product {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    &__title {
+        color: #000;
+        font-size: 20px;
+        font-weight: 500;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    &__text {
+        color: #5D5D5D;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    }
+
+    &__price {
+        color: #F16D7F;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+.button__footer__product {
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 50px;
+    & span {
+        color: #F26376;
+        font-family: Lato;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

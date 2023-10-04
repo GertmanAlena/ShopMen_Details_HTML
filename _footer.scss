@@ -1,0 +1,207 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/****footer*******/
+.footer {
+    position: relative;
+
+    
+    &__dop__info {
+        background-color: $backgroundColorSite;
+    }
+    &__dop__info {
+        @include centerFlex(center);
+
+        gap: 30px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 103px;
+        padding-bottom: 104px;
+        gap: 20px;
+
+        &_title {
+            color: #FBFBFB;
+            font-size: 19.96px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        &__text {
+            color: #918f8f;
+            text-align: center;
+            font-family: Lato;
+            font-size: 13.972px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+    }
+
+    &_feedback {
+        display: flex;
+        padding-top: 97px;
+        padding-bottom: 126px;
+        gap: 293px;
+        position: relative;
+        z-index: 2;
+        &::after {
+            content: "";
+            background: url(img/backgroundBig.png);
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;   
+            
+          }
+
+        &_face_company {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+
+            .text__face__company {
+                width: 359px;
+                color: #222224;
+                text-align: center;
+                font-family: Lato;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+
+                .a_pulvinar {
+                    font-size: 20px;
+                    font-style: italic;
+                }
+            }
+        }
+
+        &_inter__email {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .title_SUBSCRIBE {
+            color: #222224;
+            text-align: center;
+            font-family: Lato;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .title_FOR_OUR_NEWLETTER {
+            color: #222224;
+            font-family: Lato;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            padding-bottom: 15px;
+            line-height: 167.2%;
+        }
+
+        .style__input {
+            margin: -4px;
+            border-radius: 100px 15px 15px 100px;
+            background: #e3e2e2 !important;
+            outline: #080808;
+            height: 49px;
+            width: 244px;
+            color: #111111;
+            font-family: Lato;
+            border: 0px solid #080808;
+        }
+
+        .style__input {
+            padding-left: 30px;
+        }
+
+        ::placeholder {
+            color: #222224;
+            font-family: Lato;
+            font-size: 14px;
+            opacity: 0.671;
+            text-indent: 20px;
+            vertical-align: middle;
+        }
+
+        .button__submit {
+            border-radius: 15px 100px 100px 15px;
+            background: #F16D7F !important;
+            height: 49px;
+            width: 100px;
+            color: #fdf9f9;
+            font-size: 14px;
+            font-family: Lato;
+            border: 0px solid #080808;
+            &:hover {
+                transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                scale: 1.1;
+                transition-duration: .9s;
+            }
+        }
+    }
+
+    &_social_network {
+        @include centerFlex(space-between);
+        background-color: $backgroundColorSite;
+        padding: 24px 23px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+
+        &__text {
+            @include fontStyle(#FBFBFB, center, 16px, 400, normal, normal);
+        }
+
+        &__icons {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            gap: 7px;
+        }
+        .icon{
+            padding-top: 9px;
+        }
+        .logo_footer{
+            background-color: aliceblue;
+            padding: 8px;
+            
+        }
+    }
+    .logo_footer:hover{
+        background-color: $colorHover;
+
+    }
+    .network:hover {
+        background-color: $colorHover;
+        transition-duration: .9s;
+    }
+
+
+    .icon:hover{
+        color: $colorHover;
+        transition-timing-function: linear;
+    }
+}

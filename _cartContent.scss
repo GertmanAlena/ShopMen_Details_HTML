@@ -1,0 +1,200 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cart__content {
+    @include paddingsTB(96px, 128px);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 40px;
+
+    &__product {
+        -webkit-box-shadow: 16px 20px 21px 1px rgba(34, 60, 80, 0.19);
+        -moz-box-shadow: 16px 20px 21px 1px rgba(34, 60, 80, 0.19);
+        box-shadow: 16px 20px 21px 1px rgba(34, 60, 80, 0.19);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 31px;
+
+        &__img {
+            width: 262px;
+            height: 306px;
+        }
+
+        &_head {
+            display: flex;
+            flex-direction: row;
+            align-content: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__title {
+        @include fontStyle($backgroundColorSite, 24px, 400);
+        @include paddingsTB(0px, 42px);
+
+    }
+
+    &__svg__close {
+        padding-top: 5px;
+        padding-right: 22px;
+
+        path:hover {
+            fill: $colorHover;
+        }
+    }
+
+    &__text {
+        @include fontStyle(#575757, 22px, 400);
+        padding: 6px;
+
+        &-Span {
+            color: #6F6E6E;
+            font-family: Lato;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        &-SpanNum {
+            border: 1px solid #c6c1c1;
+            @include paddingsLR(16px, 17px);
+            color: #656565;
+            font-family: Lato;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-left: 24px;
+        }
+
+        .text__price {
+            @include fontStyle(#EF5B70, 22px, 400);
+        }
+    }
+
+    &__form {
+        padding-left: 128px;
+
+        &__order {
+            @include flexDispley(none, column, nowrap, flex-start, 21px);
+
+            &__input {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-content: center;
+                gap: 21px;
+
+            }
+        }
+
+        .form__order_title {
+            @include fontStyle(#575757, 16px, 300);
+            padding-top: 20px;
+        }
+
+        .input__adress {
+            text-indent: 16px;
+            width: 390px;
+            height: 44px;
+            border-color: #A4A4A4;
+        }
+
+        input::placeholder {
+            @include fontStyle(#B1B1B1, 13px, 300);
+        }
+
+        &__button {
+            background-color: white;
+            @include fontStyle(#4A4A4A, 11px, 300);
+            @include paddingsTB(10px, 12px);
+            @include paddingsLR(15px, 14px);
+            border-width: 1px;
+            border-color: #bfbbbb;
+
+            &:hover {
+                -webkit-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                -moz-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                transition: All 0.5s ease;
+
+            }
+        }
+
+    }
+
+    &__formTotal {
+        width: 360px;
+        height: 214px;
+        background-color: #F5F3F3;
+        margin-left: 128px;
+
+        @include flexDispley(center, column, nowrap, flex-end, 20px);
+        padding-right: 37px;
+
+        &__text1 {
+            @include fontStyle(#4A4A4A, 11px, 400);
+        }
+
+        &__text2 {
+            @include fontStyle(#222, 16px, 300);
+
+            .text2__span {
+                @include fontStyle(#F16D7F, 16px, 700);
+            }
+        }
+
+        &__button {
+            @include fontStyle(#FFF, 16px, 300);
+            @include paddingsTB(15px, 16px);
+            @include paddingsLR(41px, 43px);
+            border: none;
+            background-color: $colorHover;
+
+            &:hover {
+                -webkit-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                -moz-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                transition: All 0.5s ease;
+
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 72px;
+
+        &__shopping {
+            @include fontStyle(#000, 14px, 300);
+            width: 235px;
+            height: 50px;
+            background-color: white;
+
+            &:hover {
+                -webkit-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                -moz-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+                transition: All 0.5s ease;
+
+            }
+        }
+
+
+    }
+
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="fonts/stylesheet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header center">
+        <nav class="header__left">
+            <a class="log" href="#"><img src="img/logo_menu.png" alt="logo_menu" class="logl__header__left"></a>
+            <a class="log" href="#"><img src="img/forma.png" alt="logo_menu" class="logl__header__left"></a>
+        </nav>
+
+        <nav class="header__right">
+            <div class="header__burger">
+                <label class="header__burger-img" for="burger"><img src="img/menu.png" alt="logo_menu" class="log1__header__right"></label>
+                <input id="burger" type="checkbox">
+                <nav class="nav">
+                    <div class="burger_content">
+                        <details class="burger_item__head">
+                            <summary class="burger_head"><span class="burger_head-title">MENU</span>
+                            </summary>
+                            <details class="burger_item">
+                                <summary class="burger_head"><span class="burger_head-title">MAN</span>
+                                </summary>
+                                <div class="burger_link-box">
+                                    <a href="#" class="burger_link">Accessories</a>
+                                    <a href="#" class="burger_link">Bags</a>
+                                    <a href="#" class="burger_link">Denim</a>
+                                    <a href="#" class="burger_link">T-Shirts</a>
+                                </div>
+                            </details>
+
+                            <details class="burger_item">
+                                <summary class="burger_head"><span class="burger_head-title">WOMAN</span>
+                                </summary>
+                                <div class="burger_link-box">
+                                    <a href="#" class="burger_link">Accessories</a>
+                                    <a href="#" class="burger_link">Bags</a>
+                                    <a href="#" class="burger_link">Denim</a>
+                                    <a href="#" class="burger_link">T-Shirts</a>
+                                </div>
+                            </details>
+                        </details>
+                    </div>
+                </nav>
+            </div>
+
+
+            <!-- <a class="log" href="#"><img src="img/menu.png" alt="logo_menu" class="log1__header__right"></a> -->
+
+            <a class="log" href="#"><img src="img/user.png" alt="logo_menu" class="log2__header__right"></a>
+
+            <div class="basket__count">
+                <a class="log_basket" href="#"><img src="img/korz.png" alt="logo_menu"
+                        class="basket header__right__log3"></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="top__head center">
+        <a class="top__head__link" href="#">
+            <h2 class="top__head__heading">SHOPPING CART</h2>
+        </a>
+    </div>
+
+    <div class="cart__content center">
+        <div class="cart__content__product">
+            <img class="cart__content__product__img" src="img/elleryBoy.png" alt="img">
+            <div class="cart__content__product__description">
+                <div class="cart__content__product_head">
+                    <h1 class="cart__content__title">MANGO PEOPLE T-SHIRT</h1>
+                    <a class="cart__content__svg__close" href="#"><svg width="18" height="18" viewBox="0 0 18 18"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.2453 9L17.5302 2.71516C17.8285 2.41741 17.9962 2.01336 17.9966 1.59191C17.997 1.17045 17.8299 0.76611 17.5322 0.467833C17.2344 0.169555 16.8304 0.00177586 16.4089 0.00140366C15.9875 0.00103146 15.5831 0.168097 15.2848 0.465848L9 6.75069L2.71516 0.465848C2.41688 0.167571 2.01233 0 1.5905 0C1.16868 0 0.764125 0.167571 0.465848 0.465848C0.167571 0.764125 0 1.16868 0 1.5905C0 2.01233 0.167571 2.41688 0.465848 2.71516L6.75069 9L0.465848 15.2848C0.167571 15.5831 0 15.9877 0 16.4095C0 16.8313 0.167571 17.2359 0.465848 17.5342C0.764125 17.8324 1.16868 18 1.5905 18C2.01233 18 2.41688 17.8324 2.71516 17.5342L9 11.2493L15.2848 17.5342C15.5831 17.8324 15.9877 18 16.4095 18C16.8313 18 17.2359 17.8324 17.5342 17.5342C17.8324 17.2359 18 16.8313 18 16.4095C18 15.9877 17.8324 15.5831 17.5342 15.2848L11.2453 9Z"
+                                fill="#575757" />
+                        </svg></a>
+
+                </div>
+                <p class="cart__content__text">Price: <span class="text__price">$300</span></p>
+                <p class="cart__content__text">Color: <span class="cart__content__text-Span">Red</span></p>
+                <p class="cart__content__text">Size: <span class="cart__content__text-Span">Xl</span></p>
+                <p class="cart__content__text">Quantity: <span class="cart__content__text-SpanNum">2</span></p>
+            </div>
+        </div>
+
+        <div class="cart__content__form">
+            <section class="cart__content__form__order">
+                <h1 class="form__order_title">SHIPPING ADRESS</h1>
+                <form class="cart__content__form__order__input">
+                    <input class="input__adress" type="country" id="country" placeholder="Belarus">
+                    <input class="input__adress" type="city" id="city" placeholder="city">
+                    <input class="input__adress" type="street" id="street" placeholder="street">
+                </form>
+                <button class="cart__content__form__button">GET A QUOTE</button>
+            </section>
+        </div>
+        <div class="cart__content__product">
+            <img class="cart__content__product__img" src="img/menRed.png" alt="img">
+            <div class="cart__content__product__description">
+                <div class="cart__content__product_head">
+                    <h1 class="cart__content__title">MANGO PEOPLE T-SHIRT</h1>
+                    <a class="cart__content__svg__close" href="#"><svg width="18" height="18" viewBox="0 0 18 18"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M11.2453 9L17.5302 2.71516C17.8285 2.41741 17.9962 2.01336 17.9966 1.59191C17.997 1.17045 17.8299 0.76611 17.5322 0.467833C17.2344 0.169555 16.8304 0.00177586 16.4089 0.00140366C15.9875 0.00103146 15.5831 0.168097 15.2848 0.465848L9 6.75069L2.71516 0.465848C2.41688 0.167571 2.01233 0 1.5905 0C1.16868 0 0.764125 0.167571 0.465848 0.465848C0.167571 0.764125 0 1.16868 0 1.5905C0 2.01233 0.167571 2.41688 0.465848 2.71516L6.75069 9L0.465848 15.2848C0.167571 15.5831 0 15.9877 0 16.4095C0 16.8313 0.167571 17.2359 0.465848 17.5342C0.764125 17.8324 1.16868 18 1.5905 18C2.01233 18 2.41688 17.8324 2.71516 17.5342L9 11.2493L15.2848 17.5342C15.5831 17.8324 15.9877 18 16.4095 18C16.8313 18 17.2359 17.8324 17.5342 17.5342C17.8324 17.2359 18 16.8313 18 16.4095C18 15.9877 17.8324 15.5831 17.5342 15.2848L11.2453 9Z"
+                                fill="#575757" />
+                        </svg></a>
+
+                </div>
+                <p class="cart__content__text">Price: <span class="text__price">$300</span></p>
+                <p class="cart__content__text">Color: <span class="cart__content__text-Span">Red</span></p>
+                <p class="cart__content__text">Size: <span class="cart__content__text-Span">Xl</span></p>
+                <p class="cart__content__text">Quantity: <span class="cart__content__text-SpanNum">2</span></p>
+            </div>
+        </div>
+        <div class="cart__content__formTotal">
+            <p class="cart__content__formTotal__text1">SUB TOTAL<span>$900</span></p>
+            <p class="cart__content__formTotal__text2">GRAND TOTAL <span class="text2__span">$900</span></p>
+            <svg width="275" height="1" viewBox="0 0 275 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M275 0H0V1H275V0Z" fill="#E2E2E2" />
+            </svg>
+            <button class="cart__content__formTotal__button">PROCEED TO CHECKOUT</button>
+        </div>
+        <div class="cart__content__buttons">
+            <button class="cart__content__buttons__shopping">CLEAR SHOPPING CART</button>
+            <button class="cart__content__buttons__shopping">CONTINUE SHOPPING</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer_feedback center">
+            <div class="footer_feedback_face_company center">
+
+                <img src="img/face.png" alt="face company">
+                <div class="text__face__company">
+                    <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi,<span class="a_pulvinar"> a pulvinar
+                            purus condimentum“</span> </p>
+                </div>
+            </div>
+            <form class="footer_feedback_inter__email">
+                <div>
+                    <h2 class="title_SUBSCRIBE">SUBSCRIBE</h2>
+                    <h3 class="title_FOR_OUR_NEWLETTER">FOR OUR NEWLETTER AND PROMOTION</h3>
+                </div>
+                <div class="button">
+                    <input class="style__input" placeholder="   Enter Your Email" required type="email">
+
+                    <button class="button__submit" type="submit">Subscribe</button>
+                </div>
+            </form>
+        </div>
+        <div class="footer_social_network center">
+            <p class="footer_social_network__text">© 2022 Brand All Rights Reserved.</p>
+
+            <div class="footer_social_network__icons">
+                <a class="icon" href="#"><svg class="logo_footer" width="13" height="16" viewBox="0 0 13 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_52_417)">
+                            <path
+                                d="M6.74017 0.203125C3.55549 0.203125 0.408051 2.34063 0.408051 5.8C0.408051 8 1.63723 9.25 2.38218 9.25C2.68948 9.25 2.8664 8.3875 2.8664 8.14375C2.8664 7.85313 2.13076 7.23438 2.13076 6.025C2.13076 3.5125 4.03039 1.73125 6.48875 1.73125C8.60256 1.73125 10.167 2.94062 10.167 5.1625C10.167 6.82187 9.50581 9.93437 7.36407 9.93437C6.59118 9.93437 5.93003 9.37187 5.93003 8.56563C5.93003 7.38438 6.74948 6.24062 6.74948 5.02187C6.74948 2.95312 3.83484 3.32812 3.83484 5.82812C3.83484 6.35313 3.90003 6.93437 4.13283 7.4125C3.70448 9.26875 2.82915 12.0344 2.82915 13.9469C2.82915 14.5375 2.91296 15.1188 2.96883 15.7094C3.07437 15.8281 3.0216 15.8156 3.18301 15.7563C4.74741 13.6 4.69154 13.1781 5.39925 10.3562C5.78104 11.0875 6.7681 11.4812 7.55031 11.4812C10.8467 11.4812 12.3273 8.24688 12.3273 5.33125C12.3273 2.22813 9.66412 0.203125 6.74017 0.203125Z"
+                                fill="black" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_52_417">
+                                <rect width="11.9193" height="16" fill="white" transform="translate(0.408051)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+
+                <a class="icon" href="#"><svg class="logo_footer" width="17" height="16" viewBox="0 0 17 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_52_413)">
+                            <path
+                                d="M14.4181 4.74107C14.4281 4.88319 14.4281 5.02535 14.4281 5.16747C14.4281 9.50247 11.1509 14.4974 5.16096 14.4974C3.31558 14.4974 1.60132 13.9593 0.159302 13.0253C0.421495 13.0558 0.673569 13.0659 0.94585 13.0659C2.46851 13.0659 3.8702 12.5482 4.98953 11.6649C3.5576 11.6345 2.3576 10.6903 1.94415 9.39081C2.14585 9.42125 2.34751 9.44156 2.5593 9.44156C2.85172 9.44156 3.14418 9.40094 3.41643 9.32991C1.92401 9.02531 0.80465 7.70553 0.80465 6.11163V6.07103C1.23825 6.31469 1.74249 6.46697 2.2769 6.48725C1.39959 5.89841 0.824826 4.89335 0.824826 3.75628C0.824826 3.14716 0.98614 2.58878 1.26851 2.10147C2.87187 4.09131 5.28195 5.39078 7.98443 5.53294C7.93403 5.28928 7.90376 5.0355 7.90376 4.78169C7.90376 2.97457 9.35586 1.5025 11.1609 1.5025C12.0987 1.5025 12.9457 1.89844 13.5407 2.53803C14.2768 2.39591 14.9827 2.12178 15.6079 1.74616C15.3659 2.5076 14.8516 3.14719 14.176 3.55325C14.8315 3.48222 15.4668 3.29944 16.0516 3.04566C15.608 3.69538 15.0533 4.27403 14.4181 4.74107Z"
+                                fill="black" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_52_413">
+                                <rect width="15.8924" height="16" fill="white" transform="translate(0.159302)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

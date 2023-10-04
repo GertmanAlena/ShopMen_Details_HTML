@@ -1,0 +1,139 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/****filter__sort*******/
+
+.filter_sort {
+    // width: 132px;
+    position: absolute;
+    display: flex;
+    gap: 16px;
+    @include paddingsTB(39px, 64px);
+}
+
+.filter {
+    padding: 13px 16px 16px;
+    width: 360px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+
+    &[open] {
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+
+    &_summary {
+        @include centerFlex(flex-start);
+        gap: 11px;
+    }
+
+    &__title {
+        @include fetured__title__text($backgroundColorSite, 14px, 400);
+        line-height: 17px;
+    }
+
+    &_content {
+        @include paddingsTB(24px, 16px);
+    }
+
+    &_link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding: 24px 16px;
+    }
+
+    &_link {
+        @include fetured__title__text($colorSortText, 14px, 400);
+        line-height: 17px;
+        padding-left: 17px;
+
+        &:hover {
+            color: $colorHover;
+        }
+    }
+
+    &_head {
+        width: 140%;
+        @include fetured__title__text($colorSortText, 14px, 400);
+        @include paddingsTB(11px, 11px);
+        padding-left: 11px;
+        border-bottom: 1px solid #e7e3e3;
+        border-left: 5px solid $colorHover
+    }
+
+    &_item {
+        margin-top: 16px;
+
+        &[open] .filter_head-title {
+            color: $colorHover;
+        }
+
+    }
+
+    &[open] .filter__title {
+        color: $colorHover;
+    }
+
+    &[open] path {
+        fill: $colorHover;
+    }
+
+    &_item[open].filter_head {
+        color: $colorHover;
+    }
+
+}
+
+.sort {
+    @include centerFlex(flex-start);
+    margin-left: 15px;
+    padding-top: 12px;
+    align-items: flex-start;
+
+    &_details {
+        position: relative;
+        padding-right: 27px;
+    }
+
+    &_summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &_title {
+        @include fetured__title__text(#6F6E6E, 14px, 400);
+        line-height: 17px;
+    }
+
+    &__box {
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        border: 1px solid #222222;
+        position: absolute;
+        width: 79px;
+        z-index: 10;
+        margin-top: 5px;
+        padding: 9px;
+    }
+
+    &__check {
+        display: flex;
+        align-items: center;
+        @include paddingsTB(5px, 9px);
+        gap: 9px;
+        label {
+            @include fetured__title__text(#6F6E6E, 14px, 400);
+            font-family: Roboto;
+        }
+    }
+
+
+}

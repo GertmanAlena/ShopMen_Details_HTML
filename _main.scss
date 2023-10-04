@@ -1,0 +1,147 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*main*/
+.main {
+    background: #F1E4E6;
+
+    &__content {
+        @include centerFlex(center);
+        padding: 5px;
+
+        &__image {
+            margin-left: -139px;
+        }
+    }
+
+    &__text {
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+
+        &_OF_LUXERIOUS {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        &_FASHION {
+            color: #F16D7F;
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
+}
+/*main__catalog*/
+.main__catalog {
+    @include gridProduct(30px);
+    @include fontStyle(#FFF, center, 16px, 400, normal, normal);
+    padding-top: 65px;
+    padding-bottom: 96px;
+
+    &_link {
+        text-decoration: none;
+    }
+
+    &_link__long {
+        text-decoration: none;
+    }
+
+    .main__link1 {
+        @extend %mainCatalogStyle;
+        background-image: url(img/Group1.png);
+        height: 260px;
+        width: 360px;
+    }
+
+    .main__link2 {
+        @extend %mainCatalogStyle;
+        background-image: url(img/Group2.jpg);
+        height: 260px;
+        width: 360px;
+    }
+
+    .main__link3 {
+        @extend %mainCatalogStyle;
+        background-image: url(img/Group3.jpg);
+        height: 260px;
+        width: 360px;
+    }
+
+    .main__link4 {
+        @extend %mainCatalogStyle;
+        height: 180px;
+        width: 1140px;
+        background-image: url(img/Group4.jpg);
+        grid-column: 1/4;
+    }
+
+    .span__catalog {
+        @include fetured__title__text(#F16D7F, 24px, 700);
+    }
+
+    .link:hover {
+        color: aqua;
+        transform: scale(1.2);
+        /* Увеличиваем масштаб */
+        transition: 1s;
+        /* Время эффекта */
+    }
+
+    .link__long:hover {
+        color: aqua;
+        transform: scale(1.2);
+        transition: 1s;
+    }
+
+}
+
+// /*затемнение с ярлыком начало*/
+// .prod {
+//     position: relative;
+// }
+
+// .prod:after {
+//     content: '';
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//     background: rgba(0, 0, 0, .5);
+//     opacity: 0;
+// }
+
+// .prod:before {
+//     @include centerFlex(center);
+//     content: url(img/Add_to_cart.png);
+//     position: absolute;
+//     @include objectPosition(0, 0, 0, 0);
+//     opacity: 0;
+// }
+
+// .prod:hover:before,
+// .prod:hover:after {
+//     opacity: 1;
+//     transition: 1s;
+// }
+
+// /*затемнение с ярлыком конец*/
+// .button__footer__product:hover {
+//     border: 3px dotted #3a7999;
+//     color: #3a7999;
+//     background: rgba(0, 0, 0, 0);
+// }
+
+// .info_slyle_footer:hover {
+//     transform: scale(1.2);
+//     color: cornflowerblue;
+// }
