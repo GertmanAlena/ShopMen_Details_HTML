@@ -80,6 +80,7 @@
   right: 0;
   position: absolute;
   z-index: -1;
+  background-size: cover;
 }
 .footer_feedback_face_company {
   display: flex;
@@ -919,6 +920,10 @@
   flex-wrap: nowrap;
   gap: 31px;
 }
+.cart__content__product__description {
+  width: 390px;
+  position: relative;
+}
 .cart__content__product__img {
   width: 262px;
   height: 306px;
@@ -944,6 +949,9 @@
 .cart__content__svg__close {
   padding-top: 5px;
   padding-right: 22px;
+  position: absolute;
+  left: 345px;
+  top: 3px;
 }
 .cart__content__svg__close path:hover {
   fill: #F16D7F;
@@ -959,10 +967,10 @@
 }
 .cart__content__text-Span {
   color: #6F6E6E;
-  font-family: Lato;
   font-size: 22px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
+  text-align: none;
   line-height: normal;
 }
 .cart__content__text-SpanNum {
@@ -970,10 +978,10 @@
   padding-left: 16px;
   padding-right: 17px;
   color: #656565;
-  font-family: Lato;
   font-size: 22px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
+  text-align: none;
   line-height: normal;
   margin-left: 24px;
 }
@@ -1123,6 +1131,7 @@
   padding-top: 72px;
 }
 .cart__content__buttons__shopping {
+  border: 1px solid #A4A4A4;
   color: #000;
   font-size: 14px;
   font-weight: 300;
@@ -1141,6 +1150,11 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Lato", sans-serif;
 }
 
 summary {
@@ -1170,7 +1184,7 @@ a {
   position: relative;
 }
 .header__burger-img:hover {
-  box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
+  box-shadow: -1px -1px 45px 3px rgba(235, 241, 245, 0.19);
   transition: All 0.5s ease;
 }
 .header__left {
@@ -1199,7 +1213,6 @@ a {
   font-style: normal;
   text-align: none;
   line-height: normal;
-  font-family: "latoblack";
 }
 .header__right .burger_item[open] .burger_head-title {
   color: #F16D7F;
@@ -1218,10 +1231,10 @@ a {
 }
 .header__right .burger_link-box .burger_link {
   color: #6F6E6E;
-  font-family: Lato;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
+  text-align: none;
   line-height: normal;
 }
 .header__right .nav {
@@ -1238,11 +1251,11 @@ a {
 }
 .header #burger {
   position: absolute;
-  left: -99999999px;
+  left: -9999px;
   visibility: hidden;
 }
 .header #burger:checked ~ .nav {
-  right: -99999px;
+  right: -9999px;
 }
 .header .basket__count::after {
   content: "5";
@@ -1277,7 +1290,6 @@ a {
   text-decoration: none;
 }
 .top__head__link {
-  font-family: "latobold";
   text-decoration: none;
   color: #636363;
   font-size: 14px;
@@ -1288,15 +1300,12 @@ a {
   color: #222224;
 }
 .top__head__heading {
-  color: #222224;
+  color: #F16D7F;
   font-size: 24px;
   font-weight: 300;
   font-style: normal;
   text-align: none;
   line-height: normal;
-}
-.top__head__heading:hover {
-  color: #F16D7F;
 }
 .top__head .breadCrambs__link {
   color: #222224;
@@ -1363,7 +1372,6 @@ a {
   padding-bottom: 25px;
 }
 .text_product .text__product__title {
-  font-family: "latoblack";
   color: #222224;
   font-size: 13px;
   font-style: normal;
@@ -1371,7 +1379,6 @@ a {
   line-height: normal;
 }
 .text_product .text__product__text {
-  font-family: "latolight";
   color: #5D5D5D;
   font-size: 14px;
   font-style: normal;
@@ -1379,7 +1386,6 @@ a {
   line-height: normal;
 }
 .text_product .text__product__price {
-  font-family: "latoblack";
   color: #F16D7F;
   font-size: 16px;
   font-style: normal;
@@ -1393,10 +1399,10 @@ a {
 }
 .text_product .button__footer__product span {
   color: #F26376;
-  font-family: Lato;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
+  text-align: none;
   line-height: normal;
 }
 
@@ -1462,10 +1468,10 @@ a {
   }
   .product_description_breadCrambs {
     color: #6F6E6E;
-    font-family: Lato;
     font-size: 10px;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
+    text-align: none;
     line-height: normal;
   }
   .product_description__button {
@@ -1570,10 +1576,12 @@ a {
     align-items: center;
   }
   .footer_feedback_inter__email .title_SUBSCRIBE {
-    font-family: Lato;
+    color: #222224;
     font-size: 24px;
-    font-style: normal;
     font-weight: 700;
+    font-style: normal;
+    text-align: none;
+    line-height: normal;
     line-height: 167.2%;
   }
   .footer_feedback_inter__email .title_FOR_OUR_NEWLETTER {

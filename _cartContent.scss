@@ -24,6 +24,11 @@
         flex-wrap: nowrap;
         gap: 31px;
 
+        &__description {
+            width: 390px;
+            position: relative
+        }
+
         &__img {
             width: 262px;
             height: 306px;
@@ -48,6 +53,9 @@
     &__svg__close {
         padding-top: 5px;
         padding-right: 22px;
+        position: absolute;
+        left: 345px;
+        top: 3px;
 
         path:hover {
             fill: $colorHover;
@@ -59,23 +67,15 @@
         padding: 6px;
 
         &-Span {
-            color: #6F6E6E;
-            font-family: Lato;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+            @include fontStyle(#6F6E6E, 22px, 400,
+                $font-style: normal, $line-height: normal, $text-align: none);
         }
 
         &-SpanNum {
             border: 1px solid #c6c1c1;
             @include paddingsLR(16px, 17px);
-            color: #656565;
-            font-family: Lato;
-            font-size: 22px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+            @include fontStyle(#656565, 22px, 400,
+                $font-style: normal, $line-height: normal, $text-align: none);
             margin-left: 24px;
         }
 
@@ -180,6 +180,7 @@
         padding-top: 72px;
 
         &__shopping {
+            border: 1px solid #A4A4A4;
             @include fontStyle(#000, 14px, 300);
             width: 235px;
             height: 50px;

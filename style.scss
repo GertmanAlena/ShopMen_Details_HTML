@@ -12,6 +12,11 @@
     padding: 0;
 }
 
+body {
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+}
+
 summary {
     display: block;
 }
@@ -37,8 +42,9 @@ a {
     &__burger-img:hover {
         -webkit-box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
         -moz-box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
-        box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
+        box-shadow: -1px -1px 45px 3px rgb(235 241 245 / 19%);
         transition: All 0.5s ease;
+
 
     }
 
@@ -62,7 +68,6 @@ a {
             &-title {
                 @include fontStyle(#000, 14px, 700,
                     $font-style: normal, $line-height: normal, $text-align: none);
-                font-family: 'latoblack';
             }
         }
 
@@ -70,6 +75,7 @@ a {
             color: $colorHover;
             transition: All 0.5s ease;
         }
+
         .burger_link-box {
             display: flex;
             flex-direction: column;
@@ -81,15 +87,13 @@ a {
             .burger_link:hover {
                 color: $colorHover;
             }
+
             .burger_link {
-                color: #6F6E6E;
-                font-family: Lato;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
+                @include fontStyle(#6F6E6E, 14px, 400,
+                    $font-style: normal, $line-height: normal, $text-align: none);
             }
         }
+
         .nav {
             background: #FFFFFF;
             box-shadow: 6px, 4px, 35px rgba(0, 0, 0, 0.21);
@@ -110,12 +114,11 @@ a {
 
     #burger {
         position: absolute;
-        left: -99999999px;
+        left: -9999px;
         visibility: hidden;
 
         &:checked~.nav {
-            right: -99999px;
-            // right: -$widthBurgerMenu*2;
+            right: -9999px;
         }
     }
 
@@ -151,7 +154,6 @@ a {
     text-decoration: none;
 
     &__link {
-        font-family: 'latobold';
         text-decoration: none;
         @include fontStyle(#636363, 14px, 300);
         color: $backgroundColorSite;
@@ -159,11 +161,7 @@ a {
     }
 
     &__heading {
-        @include fontStyle($backgroundColorSite, 24px, 300);
-
-        &:hover {
-            color: $colorHover;
-        }
+        @include fontStyle($colorHover, 24px, 300);
     }
 
     .breadCrambs__link {
@@ -237,17 +235,14 @@ a {
     padding-bottom: 25px;
 
     .text__product__title {
-        font-family: 'latoblack';
         @include fetured__title__text($backgroundColorSite, 13px, 400);
     }
 
     .text__product__text {
-        font-family: 'latolight';
         @include fetured__title__text(#5D5D5D, 14px, 300);
     }
 
     .text__product__price {
-        font-family: 'latoblack';
         @include fetured__title__text($colorHover, 16px, 400);
     }
 
@@ -258,18 +253,10 @@ a {
     }
 
     .button__footer__product span {
-        color: #F26376;
-        font-family: Lato;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+        @include fontStyle(#F26376, 16px, 400,
+            $font-style: normal, $line-height: normal, $text-align: none);
     }
 }
-
-
-
-
 
 
 /*****адаптив для телефона*****/
@@ -329,6 +316,7 @@ a {
         margin-bottom: 65px;
         @include paddingsLR(5px, 5px);
 
+
         &__box {
             position: absolute;
             width: 320px;
@@ -343,12 +331,8 @@ a {
         }
 
         &_breadCrambs {
-            color: #6F6E6E;
-            font-family: Lato;
-            font-size: 10px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
+            @include fontStyle(#6F6E6E, 10px, 400,
+                $font-style: normal, $line-height: normal, $text-align: none);
         }
 
         &__button {
@@ -472,10 +456,8 @@ a {
                 align-items: center;
 
                 .title_SUBSCRIBE {
-                    font-family: Lato;
-                    font-size: 24px;
-                    font-style: normal;
-                    font-weight: 700;
+                    @include fontStyle($backgroundColorSite, 24px, 700,
+                        $font-style: normal, $line-height: normal, $text-align: none);
                     line-height: 167.2%;
                 }
 
