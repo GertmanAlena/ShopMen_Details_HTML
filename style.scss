@@ -44,8 +44,6 @@ a {
         -moz-box-shadow: -22px -16px 9px -5px rgba(235, 241, 245, 0.19);
         box-shadow: -1px -1px 45px 3px rgb(235 241 245 / 19%);
         transition: All 0.5s ease;
-
-
     }
 
     &__left {
@@ -70,12 +68,10 @@ a {
                     $font-style: normal, $line-height: normal, $text-align: none);
             }
         }
-
         .burger_item[open] .burger_head-title {
             color: $colorHover;
             transition: All 0.5s ease;
         }
-
         .burger_link-box {
             display: flex;
             flex-direction: column;
