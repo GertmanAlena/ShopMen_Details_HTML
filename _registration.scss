@@ -1,0 +1,118 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.form {
+    display: flex;
+    padding-top: 64px;
+    padding-bottom: 96px;
+    &__input {
+        border-color: #A4A4A4;
+        stroke-width: 1px;
+        width: 358.986px;
+        height: 44px;
+        @include fontStyle(#B1B1B1, 13px, 300);
+        padding-left: 17px;
+    }
+
+    &-lable {
+        @include fontStyle(#222, 16px, 300);
+    }
+
+    &__user {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        &-lable {
+            @include fontStyle(#222, 16px, 300);
+        }
+
+        &-choice {
+            @include fontStyle(#000, 11px, 300);
+            display: flex;
+            gap: 20px;
+            padding-top: 11px;
+            padding-bottom: 33px;
+
+            & p {
+                @include centerFlex(center);
+            }
+
+        }
+
+        &-choice input[type='radio'] {
+            margin-right: 10px;
+        }
+
+        &-radioChoice {
+            @include centerFlex(center);
+            padding-right: 20px;
+
+        }
+    }
+
+    &__login {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 15px;
+
+    }
+
+    &-text {
+        padding-bottom: 39px;
+        @include fontStyle(#B1B1B1, 13px, 300);
+    }
+
+    &__button {
+        @include fontStyle(#FFF, 14px, 400);
+        background-color: $colorHover;
+        @include paddingsTB(16px, 17px);
+        @include paddingsLR(29px, 66px);
+        border: none;
+        &:hover {
+            @include hoverShadowButtons();
+        }
+        &-svg{
+            padding-left: 20px;
+        }
+    }
+
+    &__right {
+        padding-left: 128px;
+    }
+
+    .loyal {
+        &__content {
+            &-svg {
+                padding-right: 22px;
+            }
+
+            &-title {
+                @include fontStyle(#000, 24px, 300);
+                padding-bottom: 22px;
+            }
+
+            &-about {
+                @include fontStyle(#000, 24px, 300);
+                padding-bottom: 21px;
+            }
+
+            &-bonus {
+                @include fontStyle(#000, 24px, 300);
+                padding-bottom: 16px;
+
+                .svg {
+                    padding-right: 22px;
+                }
+            }
+        }
+    }
+}

@@ -6,6 +6,7 @@
 @import 'filter';
 @import 'carousel';
 @import 'cartContent';
+@import 'registration';
 
 * {
     margin: 0;
@@ -68,10 +69,12 @@ a {
                     $font-style: normal, $line-height: normal, $text-align: none);
             }
         }
+
         .burger_item[open] .burger_head-title {
             color: $colorHover;
             transition: All 0.5s ease;
         }
+
         .burger_link-box {
             display: flex;
             flex-direction: column;
@@ -92,15 +95,16 @@ a {
 
         .nav {
             background: #FFFFFF;
-            box-shadow: 6px, 4px, 35px rgba(0, 0, 0, 0.21);
-            width: 232px;
-            padding: 32px;
+            box-shadow: 6pxстраница , 4px, 35px rgba(0, 0, 0, 0.21);
+            width: 192px;
+            padding: 9px;
             box-sizing: border-box;
             position: absolute;
             top: 80px;
             right: 0px;
             transition: right .3s;
-
+            z-index: 1;
+            right: -9999px;
             -webkit-box-shadow: -6px 7px 8px 0px rgba(34, 60, 80, 0.2);
             -moz-box-shadow: -6px 7px 8px 0px rgba(34, 60, 80, 0.2);
             box-shadow: -6px 7px 8px 0px rgba(34, 60, 80, 0.2);
@@ -114,7 +118,7 @@ a {
         visibility: hidden;
 
         &:checked~.nav {
-            right: -9999px;
+            right: 0px;
         }
     }
 
@@ -159,22 +163,35 @@ a {
     &__heading {
         @include fontStyle($colorHover, 24px, 300);
     }
+}
 
-    .breadCrambs__link {
-        color: $backgroundColorSite;
+.breadCrambs {
+    
+    &__ul {
+        list-style-type: none;
+        display: flex;
+    }
 
+    &__li:not(:last-child)::after {
+        content: '/';
+        padding-left: 8px;
+        padding-right: 8px;
+        @include fontStyle(#636363, 14px, 300);
+    }
+    &__li:last-child .breadCrambs__link{
+        font-weight: 700;
+        color: $colorHover;
+    }
+    &__link {
+        @include fontStyle(#636363, 14px, 300);
+        line-height: 17px;
         text-decoration: none;
-
         &:hover {
             color: $colorHover;
         }
     }
 
 }
-
-// .top__head__heading:hover {
-//     color: $colorHover;
-// }
 
 /*затемнение с ярлыком начало*/
 .prod {

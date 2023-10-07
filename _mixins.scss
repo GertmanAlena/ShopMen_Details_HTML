@@ -1,14 +1,15 @@
 @mixin centerCalc($width) {
     padding-left: calc(50% - $width/2);
     padding-right: calc(50% - $width/2);
-    
-    }
+
+}
 
 @mixin centerFlex($justify-content) {
     display: flex;
     justify-content: $justify-content;
     align-items: center;
 }
+
 @mixin flexDispley($justify-content, $flex-direction, $flex-wrap, $align-items, $gap) {
     display: flex;
     justify-content: $justify-content;
@@ -24,14 +25,15 @@
     align-items: center;
     gap: $gap;
 }
+
 @mixin fontStyle($color, $font-size, $font-weight,
-$font-style:normal, $line-height:normal, $text-align:none) {
-color: $color;
-font-size: $font-size;
-font-weight: $font-weight;
-font-style: $font-style;
-text-align: $text-align;
-line-height: $line-height;
+    $font-style: normal, $line-height: normal, $text-align: none) {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    text-align: $text-align;
+    line-height: $line-height;
 }
 
 @mixin fetured__title__text($color, $font-size, $font-weight) {
@@ -41,21 +43,31 @@ line-height: $line-height;
     font-weight: $font-weight;
     line-height: normal;
 }
-@mixin objectPosition($top, $left, $right, $bottom){
+
+@mixin objectPosition($top, $left, $right, $bottom) {
     top: $top;
     left: $left;
     right: $right;
     bottom: $bottom;
 }
 
-@mixin paddingsLR($paddingLeft, $paddingRight){
+@mixin paddingsLR($paddingLeft, $paddingRight) {
     padding-left: $paddingLeft;
     padding-right: $paddingRight;
 }
-@mixin paddingsTB($paddingTop, $paddingBottom){
+
+@mixin paddingsTB($paddingTop, $paddingBottom) {
     padding-top: $paddingTop;
     padding-bottom: $paddingBottom;
 }
+
+@mixin hoverShadowButtons() {
+    -webkit-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+    -moz-box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+    box-shadow: 0px 0px 11px 2px rgba(75, 78, 80, 0.81);
+    transition: All 0.5s ease;
+}
+
 
 
 
@@ -69,4 +81,3 @@ line-height: $line-height;
     line-height: 1.2;
     color: white;
 }
-
