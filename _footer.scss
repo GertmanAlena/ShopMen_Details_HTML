@@ -6,14 +6,19 @@
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 /****footer*******/
 .footer {
     position: relative;
 
-    
+
     &__dop__info {
         background-color: $backgroundColorSite;
     }
+
     &__dop__info {
         @include centerFlex(center);
 
@@ -55,6 +60,7 @@
         gap: 293px;
         position: relative;
         z-index: 2;
+
         &::after {
             content: "";
             background: url(img/backgroundBig.png);
@@ -64,9 +70,9 @@
             bottom: 0;
             right: 0;
             position: absolute;
-            z-index: -1;   
+            z-index: -1;
             background-size: cover;
-          }
+        }
 
         &_face_company {
             display: flex;
@@ -154,6 +160,7 @@
             font-size: 14px;
             font-family: Lato;
             border: 0px solid #080808;
+
             &:hover {
                 transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
                 scale: 1.1;
@@ -181,27 +188,79 @@
             justify-content: center;
             gap: 7px;
         }
-        .icon{
-            padding-top: 9px;
-        }
-        .logo_footer{
-            background-color: aliceblue;
-            padding: 8px;
-            
-        }
-    }
-    .logo_footer:hover{
-        background-color: $colorHover;
 
+        .icon {
+            background-color: aliceblue;
+            width: 25px;
+            height: 25px;
+
+            &:hover {
+                background-color: $colorHover;
+
+            }
+        }
+
+        .logo_footer {
+            padding-top: 4px;
+            padding-left: 6px;
+        }
     }
+
+
+
     .network:hover {
         background-color: $colorHover;
         transition-duration: .9s;
     }
 
 
-    .icon:hover{
+    .icon:hover {
         color: $colorHover;
         transition-timing-function: linear;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        &_background_image {
+            height: 89%;
+        }
+
+        &__dop__info {
+            display: flex;
+            flex-direction: column;
+            
+        }
+        &-none{
+            display: none;
+        }
+
+        &__dop__info:first-of-type {
+            padding-top: 24px;
+        }
+
+        &__dop__info:last-of-type {
+            padding-bottom: 24px;
+        }
+
+        &_feedback {
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
+        }
+
+        &_social_network {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+
+        .info {
+            padding-top: 24px;
+            padding-bottom: 24px;
+
+            &__text {
+                width: 360px;
+            }
+        }
     }
 }

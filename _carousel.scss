@@ -6,64 +6,26 @@
 }
 
 /****** carousel ******/
-.carousel {
+.carousel-wrapper {
+    background-color: #F7F7F7;
+    position: relative;
+    z-index: 0;
+}
+.carousel-inner{
+    // justify-content: space-around;
+}
 
-    &-inner {
-        display: flex;
-        background-color: #F7F7F7;
-        justify-content: center;
-    }
-}
-.carousel-control-next {
-    right: 0;
-}
+.carousel-control-next,
 .carousel-control-prev {
-    left: 0;
+    width: auto;
 }
-.carousel-control-next, .carousel-control-prev {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 15%;
-    color: #fff;
-    text-align: center;
-    opacity: .5;
-}
-.carousel-control-next-icon, 
-.carousel-control-prev-icon {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    background: transparent no-repeat center center;
-    background-size: 100% 100%;
-    background-color: rgba(42, 42, 42, 0.15);
-    & :hover{
-        fill: $colorHover;
-    }
-}
-.carousel-control-prev-icon {
-    padding-top: 2px;
-    padding-right: 5px;
-}
-.carousel-control-next-icon {
-    padding-top: 2px;
-    padding-right: 5px;
-    transform: rotate(180deg);
-} 
 
+.carousel-item img {
+    margin: 0 auto;
+}
 .product_description {
     @include centerFlex(center);
     flex-direction: column;
-    // @include paddingsTB(0px, 129px);
     margin-bottom: 655px;
     position: relative;
 
@@ -81,19 +43,16 @@
     }
 
     &_title1 {
-        // color: #000;
-        @include fetured__title__text(#000, 14px, 300);
+        @include fetured__title__text($colorHover, 14px, 300);
         @include paddingsTB(64px, 12px);
     }
 
     &_title2 {
-        // color: #4D4D4D;
         @include fetured__title__text(#4D4D4D, 18px, 300);
         @include paddingsTB(12px, 48px);
     }
 
     &_text {
-        // color: #5E5E5E;
         @include fetured__title__text(#5E5E5E, 14px, 300);
         text-align: center;
         width: 582px;
@@ -106,7 +65,6 @@
         color: $colorHover;
         border-bottom: 1px solid #EAEAEA;
         width: 50%;
-
     }
 
     &_line {
@@ -114,7 +72,7 @@
     }
 
     &_breadCrambs {
-
+        text-decoration: none;
         @include centerFlex(center);
         flex-direction: row;
         gap: 22px;
@@ -122,7 +80,8 @@
 
         &__a {
             color: $backgroundColorSite;
-            gap: 9px;
+            // gap: 9px;
+            text-decoration: none;
         }
     }
 
@@ -130,13 +89,13 @@
         @include centerFlex(center);
         gap: 22px;
         border: 2px solid #e34761;
-        padding: 3px 54px;
         width: 200px;
 
         .button_text {
             @include fetured__title__text($colorHover, 16px, 400);
             padding-top: 17px;
             padding-right: 5px;
+            padding-bottom: 15px;
         }
     }
 
@@ -150,4 +109,16 @@
 .product_description__button:hover {
     color: $colorHover;
     transform: translate(0, 0.25em);
+}
+
+@media (max-width: 768px){
+   
+    .product_description {
+        margin-bottom: 1px;
+        @include paddingsLR(0px, 0px);
+        &__box{
+            position: initial;
+        }
+    }
+
 }

@@ -9,10 +9,12 @@
 /*main*/
 .main {
     background: #F1E4E6;
-
+    .menu__img__left {
+        width: 800px;
+        height: 765px;
+    }
     &__content {
         @include centerFlex(center);
-        padding: 5px;
 
         &__image {
             margin-left: -139px;
@@ -20,10 +22,8 @@
     }
 
     &__text {
-        font-size: 48px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: normal;
+        @include fontStyle($backgroundColorSite, 48px, 900,
+            $font-style: normal, $line-height: normal, $text-align: none);
         display: flex;
         flex-direction: row;
         gap: 16px;
@@ -40,6 +40,7 @@
         }
     }
 }
+
 /*main__catalog*/
 .main__catalog {
     @include gridProduct(30px);
@@ -104,44 +105,22 @@
 
 }
 
-// /*затемнение с ярлыком начало*/
-// .prod {
-//     position: relative;
-// }
+@media (max-width: 768px) {
 
-// .prod:after {
-//     content: '';
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background: rgba(0, 0, 0, .5);
-//     opacity: 0;
-// }
+    .main {
+        &__text {
+            font-size: 44px;
+            &_OF_LUXERIOUS {
+                font-size: 24px;
+            }
+            &_FASHION {
+                font-size: 24px;
+            }
+        }
+        .menu__img__left {
+            width: 386px;
+            height: 368px;
+        }
+    }
 
-// .prod:before {
-//     @include centerFlex(center);
-//     content: url(img/Add_to_cart.png);
-//     position: absolute;
-//     @include objectPosition(0, 0, 0, 0);
-//     opacity: 0;
-// }
-
-// .prod:hover:before,
-// .prod:hover:after {
-//     opacity: 1;
-//     transition: 1s;
-// }
-
-// /*затемнение с ярлыком конец*/
-// .button__footer__product:hover {
-//     border: 3px dotted #3a7999;
-//     color: #3a7999;
-//     background: rgba(0, 0, 0, 0);
-// }
-
-// .info_slyle_footer:hover {
-//     transform: scale(1.2);
-//     color: cornflowerblue;
-// }
+}

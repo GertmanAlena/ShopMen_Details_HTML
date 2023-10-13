@@ -149,7 +149,7 @@ a {
 
 .top__head {
     @include centerFlex(space-between);
-    @include paddingsTB(59px, 60px);
+    // @include paddingsTB(59px, 60px);
     background: #F8F3F4;
     text-decoration: none;
 
@@ -162,11 +162,12 @@ a {
 
     &__heading {
         @include fontStyle($colorHover, 24px, 300);
+        @include paddingsTB(59px, 60px);
     }
 }
 
 .breadCrambs {
-    
+
     &__ul {
         list-style-type: none;
         display: flex;
@@ -178,14 +179,17 @@ a {
         padding-right: 8px;
         @include fontStyle(#636363, 14px, 300);
     }
-    &__li:last-child .breadCrambs__link{
+
+    &__li:last-child .breadCrambs__link {
         font-weight: 700;
         color: $colorHover;
     }
+
     &__link {
         @include fontStyle(#636363, 14px, 300);
         line-height: 17px;
         text-decoration: none;
+
         &:hover {
             color: $colorHover;
         }
@@ -221,15 +225,6 @@ a {
 .prod:hover:after {
     opacity: 1;
     transition: 1s;
-}
-
-/*затемнение с ярлыком конец*/
-.button__footer__product:hover {
-    border: 3px dotted #3a7999;
-    color: #3a7999;
-    background: rgba(0, 0, 0, 0);
-    transition: All 0.5s ease;
-
 }
 
 .info_slyle_footer:hover {
@@ -506,8 +501,7 @@ a {
 /***адаптив для планшета***/
 @media (min-width:768px) and (max-width: 1024px) {
     body {
-        // max-width: $widthTabletSite;
-        @include paddingsTB(18px, 18px);
+        // @include paddingsTB(18px, 18px);
     }
 
     .center {
@@ -524,42 +518,13 @@ a {
 
     .top__head {
         @include paddingsLR(16px, 16px);
-
+        // @include paddingsTB(59px, 60px);
         &__link {
-            @include paddingsTB(59px, 60px);
+            // @include paddingsTB(59px, 60px);
         }
     }
 
-    .product_description {
-        margin-bottom: 129px;
-        @include paddingsLR(5px, 5px);
-
-        &__box {
-            position: static;
-            border: none;
-            width: 100%;
-
-        }
-
-        &__button {
-            width: 212px;
-        }
-    }
-
-    .product_description_breadCrambs__a {
-        @include fetured__title__text(#6F6E6E, 14px, 400);
-    }
-
-    .main {
-        &__content {
-            justify-content: center;
-        }
-
-        .menu__img__left {
-            width: 386px;
-            height: 368px;
-        }
-    }
+    
 
     .main__catalog {
         .link {
@@ -593,20 +558,4 @@ a {
         }
     }
 
-    .footer {
-        &_background_image {
-            height: 89%;
-        }
-
-        &_feedback {
-            flex-direction: column;
-            align-items: center;
-            gap: 48px;
-        }
-
-        &_social_network {
-            padding-left: 32px;
-            padding-right: 32px;
-        }
-    }
 }

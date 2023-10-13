@@ -10,11 +10,13 @@
     display: flex;
     padding-top: 64px;
     padding-bottom: 96px;
+
     &__input {
-        border-color: #A4A4A4;
-        stroke-width: 1px;
-        width: 358.986px;
-        height: 44px;
+        padding-left: 17px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        width: 100%;
+        border: 1px solid #A4A4A4;
         @include fontStyle(#B1B1B1, 13px, 300);
         padding-left: 17px;
     }
@@ -44,6 +46,9 @@
                 @include centerFlex(center);
             }
 
+            .radioChoice-new {
+                display: none;
+            }
         }
 
         &-choice input[type='radio'] {
@@ -55,6 +60,7 @@
             padding-right: 20px;
 
         }
+
     }
 
     &__login {
@@ -72,15 +78,18 @@
     }
 
     &__button {
+        padding: 16px 29px;
         @include fontStyle(#FFF, 14px, 400);
         background-color: $colorHover;
         @include paddingsTB(16px, 17px);
         @include paddingsLR(29px, 66px);
         border: none;
+
         &:hover {
             @include hoverShadowButtons();
         }
-        &-svg{
+
+        &-svg {
             padding-left: 20px;
         }
     }
@@ -115,4 +124,42 @@
             }
         }
     }
+}
+
+
+@media(max-width: 768px) {
+    .form {
+        gap: 22px;
+        &__left{
+            .radioChoice-new {
+                display: flex;
+            }
+        }
+        &__right {
+            padding-left: 22px;
+
+            .loyal {
+                &__content {
+                    &-svg {}
+
+                    &-title {
+                        font-size: 16px;
+                    }
+
+                    &-about {
+                        font-size: 16px;
+                    }
+
+                    &-bonus {
+                        font-size: 16px;
+
+                        .svg {}
+                    }
+                }
+            }
+        }
+
+    }
+
+
 }

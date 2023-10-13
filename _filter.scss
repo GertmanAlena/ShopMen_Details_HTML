@@ -9,7 +9,6 @@
 /****filter__sort*******/
 
 .filter_sort {
-    // width: 132px;
     position: absolute;
     display: flex;
     gap: 16px;
@@ -135,5 +134,20 @@
         }
     }
 
+
+}
+
+@media (max-width: 768px) {
+
+    .filter_sort{
+        width: 96vw;
+        justify-content: space-between;
+       .filter{
+        padding: 13px 1px 16px;
+       } 
+       .sort{
+        align-items: center;
+       }
+    }
 
 }
