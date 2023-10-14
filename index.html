@@ -13,7 +13,7 @@
 <body>
     <header class="header center">
         <nav class="header__left">
-            <a class="log" href="#"><img src="img/logo_menu.png" alt="logo_menu" class="logl__header__left"></a>
+            <a class="log" href="index.html"><img src="img/logo_menu.png" alt="logo_menu" class="logl__header__left"></a>
             <a class="log" href="#"><img src="img/forma.png" alt="logo_menu" class="logl__header__left"></a>
         </nav>
         <nav class="header__right">
@@ -52,10 +52,10 @@
                 </nav>
             </div>
 
-            <a class="log" href="#"><img src="img/user.png" alt="logo_menu" class="log2__header__right"></a>
+            <a class="log" href="registration.html"><img src="img/user.png" alt="logo_menu" class="log2__header__right"></a>
 
             <div class="basket__count">
-                <a class="log_basket" href="#"><img src="img/korz.png" alt="logo_menu"
+                <a class="log_basket" href="cart.html"><img src="img/korz.png" alt="logo_menu"
                         class="basket header__right__log3"></a>
             </div>
         </nav>
@@ -70,18 +70,20 @@
             <div class="main__text">
                 <img src="img/line.png" alt="" class="line">
                 <div class="main__text-span">
-                    <p class="text">THE BRAND</p>
+                   <a href="catalog.html">
+                    <p class="main__text-Brand">THE BRAND</p>
                     <p class="main__text_OF_LUXERIOUS">OF LUXERIOUS <span class="main__text_FASHION">FASHION</span></p>
+                   </a>
                 </div>
             </div>
         </div>
     </main>
 
     <div class="main__catalog center">
-        <a href="#" class="main__link1 link">30% OFF <span class="span__catalog">FOR WOMEN</span></a>
-        <a href="#" class="main__link2 link">HOT DEAL <span class="span__catalog">FOR MEN</span></a>
-        <a href="#" class="main__link3 link">NEW ARRIVALS <span class="span__catalog">FOR KIDS</span></a>
-        <a href="#" class="main__link4 link__long">LUXIROUS & TRENDY <span class="span__catalog">ACCESORIES</span></a>
+        <a href="catalog.html" class="main__link1 link">30% OFF <span class="span__catalog">FOR WOMEN</span></a>
+        <a href="catalog.html" class="main__link2 link">HOT DEAL <span class="span__catalog">FOR MEN</span></a>
+        <a href="catalog.html" class="main__link3 link">NEW ARRIVALS <span class="span__catalog">FOR KIDS</span></a>
+        <a href="catalog.html" class="main__link4 link__long">LUXIROUS & TRENDY <span class="span__catalog">ACCESORIES</span></a>
     </div>
 
     <section class="fetured center">
@@ -90,7 +92,7 @@
             <p class="fetured__title__text">Shop for items based on what we featured in this week</p>
         </div>
         <article class="fetured__product product_background">
-            <a class="prod prod_Add" href="">
+            <a class="prod prod_Add" href="product.html">
                 <img class="fetured__product__img" src="img/ellery.jpg" alt="foto men">
             </a>
             <div class="text_product">
@@ -104,7 +106,7 @@
             </div>
         </article>
         <article class="fetured__product product__black">
-            <a class="prod prod_Add" href="#">
+            <a class="prod prod_Add" href="product.html">
                 <img class="women small" width="100%" src="img/wom_.jpg" alt="foto men">
             </a>
 
@@ -119,7 +121,7 @@
             </div>
         </article>
         <article class="fetured__product product_background">
-            <a class="prod prod_Add" href="#">
+            <a class="prod prod_Add" href="product.html">
                 <img class="fetured__product__img" src="img/elleryBoy.png" alt="foto Boy">
             </a>
 
@@ -134,7 +136,7 @@
             </div>
         </article>
         <article class="fetured__product product_background">
-            <a class="prod prod_Add" href="#">
+            <a class="prod prod_Add" href="product.html">
                 <img class="fetured__product__img" src="img/elleryMen2.png" alt="foto men">
             </a>
 
@@ -150,7 +152,7 @@
 
         </article>
         <article class="fetured__product product_background">
-            <a class="prod prod_Add" href="#">
+            <a class="prod prod_Add" href="product.html">
                 <img class="fetured__product__img" src="img/ellerywomen2.png" alt="foto women">
             </a>
             <div class="text_product">
@@ -163,7 +165,7 @@
             </div>
         </article>
         <article class="fetured__product product_background">
-            <a class="prod prod_Add" href="#">
+            <a class="prod prod_Add" href="product.html">
                 <img class="fetured__product__img" src="img/ellerywomen3.png" alt="foto women">
             </a>
             <div class="text_product">
@@ -176,7 +178,11 @@
             </div>
 
         </article>
-        <button class="button__footer__product"> <span class="button_text">Browse All Product</span></button>
+
+        <form class="button__footer-form" action="catalog.html">
+            <button type="submit" class="button__footer__product"> <span class="button_text">Browse All Product</span></button>
+          </form>
+        <!-- <button class="button__footer__product" > <span class="button_text">Browse All Product</span></button> -->
     </section>
 
     <footer class="footer">

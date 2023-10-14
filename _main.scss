@@ -9,10 +9,12 @@
 /*main*/
 .main {
     background: #F1E4E6;
+
     .menu__img__left {
         width: 800px;
         height: 765px;
     }
+
     &__content {
         @include centerFlex(center);
 
@@ -31,6 +33,11 @@
         &_OF_LUXERIOUS {
             font-size: 32px;
             font-weight: 700;
+            color: $backgroundColorSite;
+        }
+
+        &-Brand {
+            color: $backgroundColorSite;
         }
 
         &_FASHION {
@@ -108,19 +115,129 @@
 @media (max-width: 768px) {
 
     .main {
+        .menu__img__left {
+            width: 384.786px;
+            height: 369.048px;
+        }
+
         &__text {
             font-size: 44px;
+
             &_OF_LUXERIOUS {
                 font-size: 24px;
             }
+
             &_FASHION {
                 font-size: 24px;
             }
         }
+
         .menu__img__left {
             width: 386px;
             height: 368px;
         }
     }
+
+}
+
+@media (min-width:320px) and (max-width: 767px) {
+
+    .main {
+        height: 363px;
+        justify-content: center;
+        .link{
+            width: 90vw;
+        }
+        &__content__image {
+            display: none;
+        }
+
+        &__img__left {
+            display: none;
+        }
+        &__text {
+            padding-right: 23px;
+            font-size: 38px;
+            gap: 15px;
+            margin-top: 105px;
+            padding-left: 20px;
+
+        }
+        &-Brand {
+            @include fetured__title__text(#222, 38px, 900);
+        }
+
+        &__text_OF_LUXERIOUS {
+            @include fetured__title__text(#222, 20px, 700);
+        }
+
+        &__text_FASHION {
+            @include fetured__title__text(#F16D7F, 20px, 700);
+        }
+
+    }
+
+    /****main__catalog*****/
+    .main__catalog {
+        @include centerFlex(center);
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        .link {
+            // width: 300px;
+        }
+
+        .main__link4 {
+            // width: 300px;
+            // height: 111px;
+        }
+
+        .main__link1 {
+            // height: 247px;
+        }
+
+        .main__link2 {
+            height: 248px;
+        }
+
+        .main__link3 {
+            height: 248px;
+        }
+    }
+
+    
+    .main {
+        
+        // .link{
+        //     width: 90vw;
+        // }
+        // &__content__image {
+        //     display: none;
+        // }
+
+        // .menu__img__left {
+        //     display: none;
+        // }
+
+        // &__text {
+        //     padding-right: 23px;
+
+
+        // }
+
+        // &-Brand {
+        //     @include fetured__title__text(#222, 38px, 900);
+        // }
+
+        // &__text_OF_LUXERIOUS {
+        //     @include fetured__title__text(#222, 20px, 700);
+        // }
+
+        // &__text_FASHION {
+        //     @include fetured__title__text(#F16D7F, 20px, 700);
+        // }
+
+    }
+
 
 }

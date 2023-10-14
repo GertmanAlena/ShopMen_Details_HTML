@@ -157,18 +157,16 @@ a {
         text-decoration: none;
         @include fontStyle(#636363, 14px, 300);
         color: $backgroundColorSite;
-
     }
-
     &__heading {
-        @include fontStyle($colorHover, 24px, 300);
+        @include fontStyle($colorHover, 24px, 400);
         @include paddingsTB(59px, 60px);
     }
 }
 
 .breadCrambs {
-
-    &__ul {
+    padding-bottom: 46px;
+    &__ul{
         list-style-type: none;
         display: flex;
     }
@@ -194,7 +192,9 @@ a {
             color: $colorHover;
         }
     }
-
+    &__link_site{
+        color: $colorHover;
+    }
 }
 
 /*затемнение с ярлыком начало*/
@@ -280,7 +280,7 @@ a {
     }
 
     .header {
-        @include centerFlex(space-around);
+        @include centerFlex(space-between);
 
         &__left {
             padding-left: 16px;
@@ -289,6 +289,11 @@ a {
 
         &__right {
             gap: 0px;
+
+            .nav {
+                width: 130px;
+                top: 54px;
+            }
         }
     }
 
@@ -305,19 +310,18 @@ a {
 
     .top__head {
         flex-direction: column;
+        padding-top: 59px;
+        padding-bottom: 60px;
+        &__link {}
 
-        &__link {
-            padding-bottom: 32px;
+        &__heading {
+            
+            @include paddingsTB(24px, 32px);
         }
+
     }
 
-    .carousel {
-        @include paddingsTB(none, 85px);
 
-        &-inner {
-            padding-bottom: 85px;
-        }
-    }
 
     .product_description {
         position: relative !important;
@@ -342,102 +346,10 @@ a {
             @include fontStyle(#6F6E6E, 10px, 400,
                 $font-style: normal, $line-height: normal, $text-align: none);
         }
-
         &__button {
             width: 200px;
         }
     }
-
-    /*main*/
-    .main {
-        height: 363px;
-        justify-content: center;
-
-        .main__content__image {
-            display: none;
-        }
-
-        .menu__img__left {
-            display: none;
-        }
-
-        .main__text {
-            font-size: 38px;
-            gap: 15px;
-            margin-top: 105px;
-            padding-left: 20px;
-        }
-
-        .main__text_OF_LUXERIOUS {
-            font-size: 20px;
-        }
-
-        .main__text_FASHION {
-            font-size: 20px;
-        }
-    }
-
-    /****main__catalog*****/
-    .main__catalog {
-        @include centerFlex(center);
-        flex-direction: column;
-        flex-wrap: nowrap;
-
-        .link {
-            width: 300px;
-        }
-
-        .main__link4 {
-            width: 300px;
-            height: 111px;
-        }
-
-        .main__link1 {
-            height: 247px;
-        }
-
-        .main__link2 {
-            height: 248px;
-        }
-
-        .main__link3 {
-            height: 248px;
-        }
-    }
-
-    /*будущие товары*/
-    .fetured {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        flex-wrap: nowrap;
-        padding-bottom: 95px;
-
-        &__title {
-            width: 97%;
-        }
-
-        &__product {
-            &__img {
-                @include paddingsLR(10px, 10px);
-            }
-
-        }
-
-        .product_background {
-            background-color: #F3EEEF;
-        }
-    }
-
-    .fetured__product__new {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding-top: 64px;
-    }
-
     .footer {
         &_background_image {
             height: 82%;
@@ -450,9 +362,9 @@ a {
             padding-bottom: 109px;
             gap: 59px;
 
-            .footer_feedback_face_company {
-                padding-bottom: 48px;
-            }
+            // .footer_feedback_face_company {
+            //     padding-bottom: 48px;
+            // }
 
             .text__face__company {
                 width: 100%;
@@ -509,22 +421,24 @@ a {
     }
 
     .header {
+        @include paddingsLR(32px, 41px);
+
         &__right {
             margin-right: 20px;
         }
 
-        @include paddingsLR(32px, 41px);
     }
 
     .top__head {
         @include paddingsLR(16px, 16px);
+
         // @include paddingsTB(59px, 60px);
         &__link {
             // @include paddingsTB(59px, 60px);
         }
     }
 
-    
+
 
     .main__catalog {
         .link {
@@ -538,24 +452,6 @@ a {
         }
     }
 
-    .fetured {
-        grid-template-columns: 1fr 1fr;
 
-        &__title {
-            grid-column: 1/3;
-        }
-
-        .button__footer__product {
-            grid-column: 1/3;
-        }
-    }
-
-    .fetured__product__new {
-        gap: 16px;
-
-        .woman {
-            display: none;
-        }
-    }
 
 }

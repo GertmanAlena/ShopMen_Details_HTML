@@ -127,7 +127,7 @@
 }
 
 
-@media(max-width: 768px) {
+@media(min-width:768px) and (max-width: 1024px) {
     .form {
         gap: 22px;
         &__left{
@@ -162,4 +162,92 @@
     }
 
 
+}
+
+@media (min-width:320px) and (max-width: 767px){
+    .form {
+        flex-direction: column;
+        justify-content: center;
+
+        &__left{
+            width: 90vw;
+            padding-left: 7px;
+        }
+        &__right {
+            padding-top: 40px;
+            padding-left: 18px;
+        }
+
+
+        &__input {
+
+        }
+    
+        &-lable {
+
+        }
+    
+        &__user {
+    
+            &-lable {
+
+            }
+    
+            &-choice {
+    
+                & p {
+
+                }
+    
+                .radioChoice-new {
+
+                }
+            }
+    
+            &-radioChoice {
+
+            }
+    
+        }
+    
+        &__login {
+    
+        }
+    
+        &-text {
+
+        }
+    
+        &__button {
+
+            &-svg {
+                
+            }
+        }
+    
+
+    
+        .loyal {
+            &__content {
+                &-svg {
+
+                }
+    
+                &-title {
+
+                }
+    
+                &-about {
+                    font-size: 16px;
+                }
+    
+                &-bonus {
+                    font-size: 16px;
+                    .svg {
+                        
+                    }
+                }
+            }
+        }
+    }
 }

@@ -128,6 +128,7 @@
         align-items: center;
         @include paddingsTB(5px, 9px);
         gap: 9px;
+
         label {
             @include fetured__title__text(#6F6E6E, 14px, 400);
             font-family: Roboto;
@@ -137,17 +138,55 @@
 
 }
 
-@media (max-width: 768px) {
+@media (min-width:768px) and (max-width: 1024px) {
 
-    .filter_sort{
+    .filter_sort {
         width: 96vw;
         justify-content: space-between;
-       .filter{
-        padding: 13px 1px 16px;
-       } 
-       .sort{
-        align-items: center;
-       }
+
+        .filter {
+            padding: 13px 1px 16px;
+        }
+
+        .sort {
+            align-items: center;
+        }
     }
 
+}
+
+@media (min-width:320px) and (max-width: 767px) {
+    .filter {
+        width: 65vw;
+        padding-left: 13px;
+        padding-right: 0px;
+        &_content {
+            @include paddingsTB(0px, 10px);
+        }
+
+        &__title {
+            display: none;
+            @include fetured__title__text(#6F6E6E, 12px, 400);
+
+
+            &-img {
+                width: 37.5px;
+                height: 25px;
+                @include paddingsTB(24px, 32px);
+            }
+        }
+    }
+
+    .sort {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 0px;
+        position: absolute;
+        top: 74px;
+        left: 75px;
+        &_details{
+            padding-right: 5px;
+        }
+    }
 }
